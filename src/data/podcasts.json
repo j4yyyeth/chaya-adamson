@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Remembering Your True Self",
+    "description": "In this episode, we explore what it means to remember who you truly are beneath all the conditioning and expectations.",
+    "duration": "42:15",
+    "date": "Dec 15, 2024",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "title": "The Sacred Art of Letting Go",
+    "description": "A deep dive into releasing what no longer serves you and creating space for what wants to emerge.",
+    "duration": "38:22",
+    "date": "Dec 8, 2024",
+    "featured": false
+  },
+  {
+    "id": 3,
+    "title": "Living from Your Inner Knowing",
+    "description": "How to trust your intuition and make decisions from a place of deep inner wisdom rather than external validation.",
+    "duration": "45:18",
+    "date": "Dec 1, 2024",
+    "featured": false
+  },
+  {
+    "id": 4,
+    "title": "Healing the Mother Wound",
+    "description": "An honest conversation about healing generational patterns and reclaiming your feminine power.",
+    "duration": "51:33",
+    "date": "Nov 24, 2024",
+    "featured": false
+  },
+  {
+    "id": 5,
+    "title": "Embodiment vs. Spiritual Bypassing",
+    "description": "The difference between true embodiment and using spirituality to avoid feeling our emotions.",
+    "duration": "39:45",
+    "date": "Nov 17, 2024",
+    "featured": false
+  },
+  {
+    "id": 6,
+    "title": "Creating Sacred Boundaries",
+    "description": "How to set boundaries that honor your energy and create space for what truly matters.",
+    "duration": "44:12",
+    "date": "Nov 10, 2024",
+    "featured": false
+  }
+]

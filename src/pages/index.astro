@@ -1,0 +1,224 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+import Card from '../components/Card.astro';
+---
+
+<Layout title="Chaya Adamson - Remember Who You Are">
+  <!-- Hero Section -->
+  <section
+    class="hero-section"
+    style="min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; background-image: url('/images/mountains.gif'); background-size: cover; background-position: center;"
+  >
+    <div
+      style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(43, 27, 12, 0.6), transparent, rgba(43, 27, 12, 0.4)); opacity: 0.3;"
+    >
+    </div>
+    <div class="hero-floating-element hero-floating-element--top-right"></div>
+    <div class="hero-floating-element hero-floating-element--bottom-left"></div>
+
+    <div class="hero-content">
+      <div style="max-width: 80rem; margin: 0 auto; text-align: center;">
+        <h1 class="hero-title">You already know.</h1>
+        <p class="hero-subtitle">Let me remind you who you are.</p>
+        <div style="padding-top: 2rem;">
+          <Button variant="outline" size="large" href="/contact">
+            Begin Your Journey
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+<section class="content-section content-section--light mission-section-enhanced">
+  <div class="section-floating-element section-floating-element--top-left"></div>
+  <div class="container" style="text-align: center;">
+    <div style="max-width: 64rem; margin: 0 auto;">
+      <div class="mission-content">
+        <h2 class="section-title">Mission</h2>
+        <div class="section-divider"></div>
+        <p class="text-large">
+          Coach, guide, and mirror for the ones who <strong>already know</strong>. I help
+          spiritually connected women come home to their truth and move into
+          <strong>full alignment</strong>.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- My Story Section -->
+  <section class="content-section content-section--dark">
+    <div class="section-content">
+      <div class="section-header">
+        <h2 class="section-title">My Story</h2>
+        <div class="section-divider section-divider--light"></div>
+      </div>
+
+      <div class="content-grid">
+        <div class="text-content">
+          <p class="text-large">
+            From the very beginning, my life was shaped by grief when I lost my
+            father very early in life. My childhood trauma didn't discriminate
+            and neither did the pain.
+          </p>
+          <p class="text-large">
+            I spent years chasing a definition of all the wrong things. Looking
+            for safety in places I would never find it, so not different from
+            the majority of us. I was looking for love in all the wrong places.
+          </p>
+          <p class="text-large">
+            I never stopped searching. Even in the darkest moments, I believed
+            that there was a reason to feel different, more aligned, more
+            peaceful, more connected to my truth.
+          </p>
+          <p class="text-large">
+            My healing practice began when I stopped trying to be who I thought
+            I should be and started remembering who I actually was. I started
+            through my inner work, spiritual connection, and I found myself.
+          </p>
+          <p class="text-large">
+            Today, I believe everyone deserves to feel at home in themselves. I
+            know that when we do the work to remember who we are, we can live
+            from the same. Because I believe no one should have to suffer alone.
+          </p>
+          <p class="text-large">
+            We are not here to live in regret, to carry the sky on our backs or
+            to live in the shadows of our past. We are here to embody our truth
+            and live from our light.
+          </p>
+          <p
+            class="text-large special-text"
+            style="color: #F8E8D4; font-style: italic; font-size: 1.5rem;"
+          >
+            And my deepest desire is to help you find yours.
+          </p>
+        </div>
+
+        <div style="display: flex; justify-content: center;">
+          <div class="image-container image-container--floating">
+            <div class="floating-effect"></div>
+            <div class="image-wrapper" style="width: 24rem; height: 31.25rem;">
+              <img
+                src="/images/img.jpg"
+                alt="Chaya Adamson"
+              />
+              <div class="image-overlay"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What You Are NOT Section -->
+  <section class="content-section content-section--light">
+    <div
+      class="section-floating-element section-floating-element--bottom-right"
+    >
+    </div>
+    <div class="section-content">
+      <div class="section-header">
+        <h2 class="section-title">What You ARE NOT</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="grid grid--two-cols">
+        <Card>
+          <div class="card-divider"></div>
+          <p
+            style="font-size: 1.5rem; font-weight: 300; line-height: 1.4; margin-bottom: 1rem;"
+          >
+            You're not here to be small.
+          </p>
+          <p style="font-size: 1.5rem; font-weight: 300; line-height: 1.4;">
+            You're here to be seen, witnessed, and moved.
+          </p>
+        </Card>
+
+        <Card>
+          <div class="card-divider"></div>
+          <p
+            style="font-size: 1.5rem; font-weight: 300; line-height: 1.4; margin-bottom: 1rem;"
+          >
+            You're not looking for someone else's voice.
+          </p>
+          <p style="font-size: 1.5rem; font-weight: 300; line-height: 1.4;">
+            You're looking for your own.
+          </p>
+        </Card>
+      </div>
+    </div>
+  </section>
+
+  <!-- Philosophy Section -->
+  <section class="content-section content-section--dark">
+    <div
+      class="container"
+      style="max-width: 80rem; margin: 0 auto; text-align: center;"
+    >
+      <div
+        style="display: inline-block; padding: 2rem; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(4px); border-radius: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.1); margin-bottom: 5rem;"
+      >
+        <p style="font-size: 1.5rem; line-height: 1.4; font-weight: 300;">
+          My work is for those who have already done the seeking, who are
+          already doing the work, and are ready to move with <span
+            class="text-highlight">clarity</span
+          >,
+          <span class="text-highlight">power</span>, and
+          <span class="text-highlight">presence</span> into embodiment.
+        </p>
+      </div>
+
+      <div
+        style="display: inline-block; padding: 2rem; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(4px); border-radius: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.1);"
+      >
+        <p style="font-size: 1.5rem; line-height: 1.4; font-weight: 300;">
+          There is nothing to prove and nothing to be, other than exactly as you
+          already are. Welcome to the space where your <span
+            class="text-highlight text-highlight--italic"
+            >knowing becomes your guide</span
+          >.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section class="content-section content-section--light">
+    <div class="section-floating-element section-floating-element--center">
+    </div>
+    <div class="container" style="text-align: center;">
+      <div style="max-width: 80rem; margin: 0 auto;">
+        <div style="margin-bottom: 4rem;">
+          <p
+            style="font-size: 1.5rem; line-height: 1.4; font-weight: 300; margin-bottom: 2rem;"
+          >
+            Through methods of <span style="font-weight: 400;">meditation</span
+            >,
+            <span style="font-weight: 400;">IST coaching</span> and
+            <span style="font-weight: 400;">embodiment practices</span>, we go
+            inward. Toward your truth, your inner knowing that already has
+            everything you need.
+          </p>
+          <p style="font-size: 1.5rem; line-height: 1.4; font-weight: 300;">
+            If you are done outsourcing your power and ready to move with your
+            knowing, we should connect.
+          </p>
+        </div>
+
+        <div style="margin-bottom: 3rem;">
+          <h3
+            style="font-size: 2.5rem; font-weight: 200; letter-spacing: 0.05em; margin-bottom: 3rem;"
+          >
+            Ready to move in alignment?
+          </h3>
+          <Button variant="primary" size="large" href="/contact">
+            Free Exploration
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

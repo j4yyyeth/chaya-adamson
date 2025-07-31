@@ -1,0 +1,21 @@
+---
+export interface Props {
+  variant?: 'default' | 'dark' | 'glass';
+  class?: string;
+}
+
+const { variant = 'default', class: className = '' } = Astro.props;
+
+const baseClasses = 'card';
+const variantClass = variant !== 'default' ? `card--${variant}` : '';
+
+const classes = [baseClasses, variantClass, className]
+  .filter(Boolean)
+  .join(' ');
+---
+
+<div class={classes}>
+  <div class="card-content">
+    <slot />
+  </div>
+</div>

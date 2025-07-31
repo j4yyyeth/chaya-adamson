@@ -1,0 +1,190 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
+import Card from '../components/Card.astro';
+import podcastsData from '../data/podcasts.json';
+
+const featuredEpisode = podcastsData.find(episode => episode.featured);
+const otherEpisodes = podcastsData.filter(episode => !episode.featured);
+---
+
+<Layout title="The Remembering Podcast - Chaya Adamson">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-floating-element hero-floating-element--top-right"></div>
+    <div class="hero-floating-element hero-floating-element--bottom-left"></div>
+
+    <div class="hero-content">
+      <div style="max-width: 96rem; margin: 0 auto;">
+        <div class="content-grid">
+          <div>
+            <h1 class="hero-title">The Podcast</h1>
+            <p class="hero-subtitle">
+              A podcast for women ready to remember who they truly are
+            </p>
+            <div class="hero-divider"></div>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+              <Button variant="secondary" size="large">
+                <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+                </svg>
+                Listen on Apple Podcasts
+              </Button>
+              <Button variant="outline" size="large">
+                <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                </svg>
+                Spotify
+              </Button>
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: center;">
+            <div class="image-container image-container--floating">
+              <div class="floating-effect"></div>
+              <div class="image-wrapper" style="width: 24rem; height: 24rem; border-radius: 1.5rem; overflow: hidden; background: linear-gradient(135deg, rgba(248, 232, 212, 0.2), rgba(248, 232, 212, 0.1)); backdrop-filter: blur(4px); border: 1px solid rgba(255, 255, 255, 0.1); display: flex; align-items: center; justify-content: center;">
+                <div style="text-center;">
+                  <div style="width: 6rem; height: 6rem; background: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                    <svg style="width: 3rem; height: 3rem; color: #F8E8D4;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+                    </svg>
+                  </div>
+                  <h3 style="font-size: 1.5rem; font-weight: 300; color: #F8E8D4; margin-bottom: 0.5rem;">The Podcast</h3>
+                  <p style="font-size: 1.125rem; opacity: 0.8; font-weight: 300;">Podcast</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Episode -->
+  <section class="content-section content-section--light">
+    <div class="section-floating-element section-floating-element--top-left"></div>
+
+    <div class="section-content">
+      <div class="section-header">
+        <h2 class="section-title">Latest Episode</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <Card>
+        <div class="content-grid">
+          <div style="grid-column: span 2;">
+            <div class="episode-meta">
+              <svg class="meta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+              </svg>
+              <span class="meta-text">{featuredEpisode?.date}</span>
+              <svg class="meta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <span class="meta-text">{featuredEpisode?.duration}</span>
+            </div>
+            <h3 style="font-size: 2.5rem; font-weight: 300; letter-spacing: 0.05em; margin-bottom: 1rem;">{featuredEpisode?.title}</h3>
+            <p style="font-size: 1.25rem; opacity: 0.8; line-height: 1.4; font-weight: 300; margin-bottom: 2rem;">{featuredEpisode?.description}</p>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+              <Button variant="primary" size="large">
+                <svg class="btn-icon" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+                Play Episode
+              </Button>
+              <Button variant="outline" size="large" class="btn--outline--dark">
+                <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                </svg>
+                Download
+              </Button>
+            </div>
+          </div>
+        </div>
+      </Card>
+    </div>
+  </section>
+
+  <!-- All Episodes -->
+  <section class="content-section content-section--dark">
+    <div class="section-floating-element section-floating-element--bottom-right"></div>
+
+    <div class="section-content">
+      <div class="section-header">
+        <h2 class="section-title">All Episodes</h2>
+        <div class="section-divider section-divider--light"></div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 2rem;">
+        {otherEpisodes.map((episode) => (
+          <Card variant="glass">
+            <div class="podcast-card">
+              <div style="width: 70%">
+                <div class="episode-meta episode-meta--light">
+                  <svg class="meta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                  </svg>
+                  <span class="meta-text">{episode.date}</span>
+                  <svg class="meta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                  <span class="meta-text">{episode.duration}</span>
+                </div>
+                <h3 style="font-size: 1.5rem; font-weight: 300; letter-spacing: 0.05em; margin-bottom: 1rem; transition: color 0.3s ease;">{episode.title}</h3>
+                <p style="font-size: 1.125rem; opacity: 0.8; line-height: 1.4; font-weight: 300;">{episode.description}</p>
+              </div>
+
+              <div style="display: flex; justify-content: center;">
+                <Button variant="outline" size="large" class="btn--outline">
+                  <svg class="btn-icon" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                  Play
+                </Button>
+              </div>
+            </div>
+          </Card>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Subscribe Section -->
+  <section class="content-section content-section--light">
+    <div class="section-floating-element section-floating-element--center"></div>
+
+    <div class="container" style="text-align: center;">
+      <div style="max-width: 64rem; margin: 0 auto;">
+        <div style="margin-bottom: 3rem;">
+          <h2 class="section-title">Never Miss an Episode</h2>
+          <p style="font-size: 1.5rem; opacity: 0.8; font-weight: 300; line-height: 1.4;">
+            Subscribe to The Podcast and join thousands of women on the journey home to themselves.
+          </p>
+        </div>
+
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem;">
+          <Button variant="primary" size="large">
+            <svg class="btn-icon btn-icon--large" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+            </svg>
+            Apple Podcasts
+          </Button>
+          <Button variant="primary" size="large">
+            <svg class="btn-icon btn-icon--large" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+            </svg>
+            Spotify
+          </Button>
+          <Button variant="primary" size="large">
+            <svg class="btn-icon btn-icon--large" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+            </svg>
+            Google Podcasts
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
