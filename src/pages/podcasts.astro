@@ -2,13 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
 import Card from '../components/Card.astro';
-import podcastsData from '../data/podcasts.json';
-
-const featuredEpisode = podcastsData.find(episode => episode.featured);
-const otherEpisodes = podcastsData.filter(episode => !episode.featured);
 ---
 
-<Layout title="The Remembering Podcast - Chaya Adamson">
+<Layout title="Parsha with Purpose - Chaya Adamson">
   <!-- Hero Section -->
   <section class="hero-section">
     <div class="hero-floating-element hero-floating-element--top-right"></div>
@@ -23,162 +19,341 @@ const otherEpisodes = podcastsData.filter(episode => !episode.featured);
               Relevant. Relatable. Real. 
             </p>
             <div class="hero-divider"></div>
+            <p style="font-size: 1.25rem; opacity: 0.9; font-weight: 300; line-height: 1.4; margin-bottom: 2rem;">
+              This isn't the parsha class you grew up with.
+            </p>
 
             <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
-              <Button variant="secondary" size="large">
+              <Button variant="secondary" size="large" href="https://chat.whatsapp.com/DTm0JXsgkME9COv772vAaU">
                 <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
                 </svg>
-                Listen on Apple Podcasts
+                Join WhatsApp Group
               </Button>
               <Button variant="outline" size="large">
                 <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
                 </svg>
-                Spotify
+                Listen as Podcast
               </Button>
             </div>
           </div>
 
-<div style="display: flex; justify-content: center;">
-  <div class="image-container image-container--floating">
-    <div class="floating-effect"></div>
-    <div class="image-wrapper podcast-image-wrapper" style="width: 24rem; height: 24rem; border-radius: 1.5rem; overflow: hidden; background-image: url('/images/thumbnail.webp'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; position: relative;">
-      <!-- Dark overlay for better text readability -->
-      <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(43, 27, 12, 0.3), transparent, rgba(43, 27, 12, 0.6)); border-radius: 1.5rem;"></div>
-
-    </div>
-  </div>
-</div>
+          <div style="display: flex; justify-content: center;">
+            <div class="image-container image-container--floating">
+              <div class="floating-effect"></div>
+              <div class="image-wrapper podcast-image-wrapper" style="width: 24rem; height: 24rem; border-radius: 1.5rem; overflow: hidden; background-image: url('/images/thumbnail.webp'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; position: relative;">
+                <!-- Dark overlay for better text readability -->
+                <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(43, 27, 12, 0.3), transparent, rgba(43, 27, 12, 0.6)); border-radius: 1.5rem;"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Featured Episode -->
+  <!-- About the Class Section -->
   <section class="content-section content-section--light">
     <div class="section-floating-element section-floating-element--top-left"></div>
 
     <div class="section-content">
       <div class="section-header">
-        <h2 class="section-title">Latest Episode</h2>
+        <h2 class="section-title">A Living Torah Experience</h2>
         <div class="section-divider"></div>
       </div>
 
-      <Card>
-        <div class="content-grid">
-          <div style="grid-column: span 2;">
-            <div class="episode-meta">
-              <svg class="meta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2z"/>
-              </svg>
-              <span class="meta-text">{featuredEpisode?.date}</span>
-              <svg class="meta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-              </svg>
-              <span class="meta-text">{featuredEpisode?.duration}</span>
-            </div>
-            <h3 style="font-size: 2.5rem; font-weight: 300; letter-spacing: 0.05em; margin-bottom: 1rem;">{featuredEpisode?.title}</h3>
-            <p style="font-size: 1.25rem; opacity: 0.8; line-height: 1.4; font-weight: 300; margin-bottom: 2rem;">{featuredEpisode?.description}</p>
-
-            <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
-              <Button variant="primary" size="large">
-                <svg class="btn-icon" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
-                Play Episode
-              </Button>
-              <Button variant="outline" size="large" class="btn--outline--dark">
-                <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                </svg>
-                Download
-              </Button>
-            </div>
-          </div>
+      <div style="max-width: 64rem; margin: 0 auto;">
+        <div class="text-content" style="text-align: center; margin-bottom: 4rem;">
+          <p class="text-large">
+            Each week, we learn the stories of the parsha that have once felt dry or irrelevant and uncover a living, breathing message. Something deeply personal, spiritual, and aligned with your real life.
+          </p>
+          <p class="text-large">
+            We uncover the personal, emotional, and spiritual relevance hidden in the stories, and how it speaks directly to our lives, relationships, and inner worlds <em>right now</em>.
+          </p>
+          <p class="text-large">
+            We go beyond the story to find the soul teachings. We connect to Torah as our guide, extracting the abundant wisdom it holds.
+          </p>
+          <p class="text-large">
+            This class is for women who want to deepen their spiritual connection, ask real questions, and engage with Torah in a way that's alive, embodied, and relevant.
+          </p>
         </div>
-      </Card>
+      </div>
     </div>
   </section>
 
-  <!-- All Episodes -->
+  <!-- This Class is For You Section -->
   <section class="content-section content-section--dark">
     <div class="section-floating-element section-floating-element--bottom-right"></div>
 
     <div class="section-content">
       <div class="section-header">
-        <h2 class="section-title">All Episodes</h2>
+        <h2 class="section-title">This Class is For You If</h2>
         <div class="section-divider section-divider--light"></div>
       </div>
 
-      <div style="display: flex; flex-direction: column; gap: 2rem;">
-        {otherEpisodes.map((episode) => (
+      <div style="max-width: 48rem; margin: 0 auto;">
+        <div class="grid" style="gap: 2rem;">
           <Card variant="glass">
-            <div class="podcast-card">
-              <div style="width: 70%">
-                <div class="episode-meta episode-meta--light">
-                  <svg class="meta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2z"/>
-                  </svg>
-                  <span class="meta-text">{episode.date}</span>
-                  <svg class="meta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                  </svg>
-                  <span class="meta-text">{episode.duration}</span>
-                </div>
-                <h3 style="font-size: 1.5rem; font-weight: 300; letter-spacing: 0.05em; margin-bottom: 1rem; transition: color 0.3s ease;">{episode.title}</h3>
-                <p style="font-size: 1.125rem; opacity: 0.8; line-height: 1.4; font-weight: 300;">{episode.description}</p>
+            <div style="text-align: center; padding: 2rem;">
+              <div style="width: 4rem; height: 4rem; background: rgba(248, 232, 212, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                <svg style="width: 2rem; height: 2rem; color: #F8E8D4;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                </svg>
               </div>
-
-              <div style="display: flex; justify-content: center;">
-                <Button variant="outline" size="large" class="btn--outline">
-                  <svg class="btn-icon" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z"/>
-                  </svg>
-                  Play
-                </Button>
-              </div>
+              <p style="font-size: 1.25rem; color: rgba(255, 255, 255, 0.9); line-height: 1.4; margin: 0;">
+                You desire to learn Torah in a way that speaks to your soul.
+              </p>
             </div>
           </Card>
-        ))}
+
+          <Card variant="glass">
+            <div style="text-align: center; padding: 2rem;">
+              <div style="width: 4rem; height: 4rem; background: rgba(248, 232, 212, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                <svg style="width: 2rem; height: 2rem; color: #F8E8D4;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707"/>
+                </svg>
+              </div>
+              <p style="font-size: 1.25rem; color: rgba(255, 255, 255, 0.9); line-height: 1.4; margin: 0;">
+                You crave a feminine, grounded approach to learning that honors your own path and inner knowing.
+              </p>
+            </div>
+          </Card>
+
+          <Card variant="glass">
+            <div style="text-align: center; padding: 2rem;">
+              <div style="width: 4rem; height: 4rem; background: rgba(248, 232, 212, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                <svg style="width: 2rem; height: 2rem; color: #F8E8D4;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                </svg>
+              </div>
+              <p style="font-size: 1.25rem; color: rgba(255, 255, 255, 0.9); line-height: 1.4; margin: 0;">
+                You're integrating spirituality with personal healing and self-leadership.
+              </p>
+            </div>
+          </Card>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Subscribe Section -->
+  <!-- Testimonials Section -->
+  <section class="content-section content-section--light testimonials-section">
+    <div class="section-floating-element section-floating-element--center"></div>
+    <div class="section-content">
+      <div class="section-header">
+        <h2 class="section-title">What Women Are Saying</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="testimonials-container">
+        <div class="testimonials-carousel" id="testimonials-carousel">
+          <!-- Testimonial 1 - Learn -->
+          <div class="testimonial-slide active">
+            <div class="testimonial-content">
+              <h3 style="font-size: 1.5rem; font-weight: 500; color: #2b1b0c; margin-bottom: 1rem; text-align: center;">Learn</h3>
+              <p class="testimonial-text">
+                It's the highlight of my week! I know I could show up to learn, and there is something special waiting for me. The lessons are spiritual, mystical and practical all at the same time. I had no idea that topics that felt so foreign in the past could feel so relevant to me. This is the first time I've felt like Torah is *mine*. Like it's speaking to me, not at me.
+              </p>
+              <p style="text-align: right; font-style: italic; color: rgba(43, 27, 12, 0.7); margin-top: 1rem;">- Rivka</p>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 - Connect -->
+          <div class="testimonial-slide">
+            <div class="testimonial-content">
+              <h3 style="font-size: 1.5rem; font-weight: 500; color: #2b1b0c; margin-bottom: 1rem; text-align: center;">Connect</h3>
+              <p class="testimonial-text">
+                This class is a time and space that I get to come to weekly to connect to torah, to myself, and to others who are on the same path as me. It has awakened in me the desire to learn and connect through torah for the first time in my life. I never thought that was possible.
+              </p>
+              <p style="text-align: right; font-style: italic; color: rgba(43, 27, 12, 0.7); margin-top: 1rem;">- Esther</p>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 - Grow -->
+          <div class="testimonial-slide">
+            <div class="testimonial-content">
+              <h3 style="font-size: 1.5rem; font-weight: 500; color: #2b1b0c; margin-bottom: 1rem; text-align: center;">Grow</h3>
+              <p class="testimonial-text">
+                Thank you for making that story relatable to me. In the way that we learn, I feel connected and alive with the Torah. I look back on the teachings from my past, and feel deeply how different this is. It opens me up in a whole new way. Somehow each week the class speaks directly to me, in a way that speaks straight to my soul with a lesson that is relevant to my current struggle. It's almost as if the torah is communicating with me.
+              </p>
+              <p style="text-align: right; font-style: italic; color: rgba(43, 27, 12, 0.7); margin-top: 1rem;">- Rus</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <button class="testimonial-nav testimonial-nav--prev" id="prev-testimonial" aria-label="Previous testimonial">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        
+        <button class="testimonial-nav testimonial-nav--next" id="next-testimonial" aria-label="Next testimonial">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <!-- Dots Navigation -->
+        <div class="testimonials-dots" id="testimonials-dots">
+          <button class="testimonial-dot active" data-slide="0" aria-label="Go to testimonial 1"></button>
+          <button class="testimonial-dot" data-slide="1" aria-label="Go to testimonial 2"></button>
+          <button class="testimonial-dot" data-slide="2" aria-label="Go to testimonial 3"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Class Details Section -->
+  <section class="content-section content-section--dark">
+    <div class="section-floating-element section-floating-element--top-left"></div>
+
+    <div class="section-content">
+      <div class="section-header">
+        <h2 class="section-title">Class Details</h2>
+        <div class="section-divider section-divider--light"></div>
+      </div>
+
+      <div style="max-width: 48rem; margin: 0 auto;">
+        <div class="grid grid--three-cols" style="gap: 3rem; margin-bottom: 3rem;">
+          <Card variant="glass">
+            <div style="text-align: center; padding: 2rem;">
+              <div style="width: 4rem; height: 4rem; background: rgba(248, 232, 212, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                <svg style="width: 2rem; height: 2rem; color: #F8E8D4;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <h3 style="font-size: 1.25rem; font-weight: 500; color: #F8E8D4; margin-bottom: 0.5rem;">Live Class</h3>
+              <p style="color: rgba(248, 232, 212, 0.8); margin: 0;">via Zoom</p>
+            </div>
+          </Card>
+
+          <Card variant="glass">
+            <div style="text-align: center; padding: 2rem;">
+              <div style="width: 4rem; height: 4rem; background: rgba(248, 232, 212, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                <svg style="width: 2rem; height: 2rem; color: #F8E8D4;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <h3 style="font-size: 1.25rem; font-weight: 500; color: #F8E8D4; margin-bottom: 0.5rem;">Weekly</h3>
+              <p style="color: rgba(248, 232, 212, 0.8); margin: 0;">Thursdays 9:00 AM</p>
+            </div>
+          </Card>
+
+          <Card variant="glass">
+            <div style="text-align: center; padding: 2rem;">
+              <div style="width: 4rem; height: 4rem; background: rgba(248, 232, 212, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                <svg style="width: 2rem; height: 2rem; color: #F8E8D4;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+                </svg>
+              </div>
+              <h3 style="font-size: 1.25rem; font-weight: 500; color: #F8E8D4; margin-bottom: 0.5rem;">Available</h3>
+              <p style="color: rgba(248, 232, 212, 0.8); margin: 0;">as a Podcast</p>
+            </div>
+          </Card>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Join Section -->
   <section class="content-section content-section--light">
     <div class="section-floating-element section-floating-element--center"></div>
 
     <div class="container" style="text-align: center;">
       <div style="max-width: 64rem; margin: 0 auto;">
         <div style="margin-bottom: 3rem;">
-          <h2 class="section-title">Never Miss an Episode</h2>
+          <h2 class="section-title">Join the Journey</h2>
           <p style="font-size: 1.5rem; opacity: 0.8; font-weight: 300; line-height: 1.4;">
-            Subscribe to The Podcast and join thousands of women on the journey home to themselves.
+            Experience Torah like never before. Join women from around the world in discovering the living wisdom within each parsha.
           </p>
         </div>
 
         <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem;">
-          <Button variant="primary" size="large">
+          <Button variant="primary" size="large" href="https://chat.whatsapp.com/DTm0JXsgkME9COv772vAaU">
+            <svg class="btn-icon btn-icon--large" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+            </svg>
+            Join Live Class
+          </Button>
+          <Button variant="secondary" size="large">
             <svg class="btn-icon btn-icon--large" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
             </svg>
-            Apple Podcasts
-          </Button>
-          <Button variant="primary" size="large" href="https://open.spotify.com/show/6TNloSZWahwAKN17eKrcKW?si=b753383a964e4164">
-            <svg class="btn-icon btn-icon--large" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-            </svg>
-            Spotify
-          </Button>
-          <Button variant="primary" size="large">
-            <svg class="btn-icon btn-icon--large" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-            </svg>
-            Google Podcasts
+            Listen as Podcast
           </Button>
         </div>
       </div>
     </div>
   </section>
 </Layout>
+
+<script>
+// Testimonials Carousel Functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const carousel = document.getElementById('testimonials-carousel');
+  if (!carousel) return;
+  
+  const slides = carousel.querySelectorAll('.testimonial-slide');
+  const dots = document.querySelectorAll('.testimonial-dot');
+  const prevBtn = document.getElementById('prev-testimonial');
+  const nextBtn = document.getElementById('next-testimonial');
+  
+  let currentSlide = 0;
+  const totalSlides = slides.length;
+  let autoRotate;
+  
+  function showSlide(index) {
+    // Remove active class from all slides and dots
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+    
+    // Add active class to current slide and dot
+    if (slides[index]) slides[index].classList.add('active');
+    if (dots[index]) dots[index].classList.add('active');
+    
+    currentSlide = index;
+  }
+  
+  function nextSlide() {
+    const next = (currentSlide + 1) % totalSlides;
+    showSlide(next);
+  }
+  
+  function prevSlide() {
+    const prev = (currentSlide - 1 + totalSlides) % totalSlides;
+    showSlide(prev);
+  }
+  
+  function startAutoRotate() {
+    autoRotate = setInterval(nextSlide, 6000); // Change every 6 seconds for longer testimonials
+  }
+  
+  function stopAutoRotate() {
+    if (autoRotate) {
+      clearInterval(autoRotate);
+    }
+  }
+  
+  // Event listeners
+  if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+  if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+  
+  // Dot navigation
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => showSlide(index));
+  });
+  
+  // Auto-rotate testimonials
+  startAutoRotate();
+  
+  // Pause auto-rotation on hover
+  carousel.addEventListener('mouseenter', stopAutoRotate);
+  carousel.addEventListener('mouseleave', startAutoRotate);
+  
+  // Pause on focus for accessibility
+  carousel.addEventListener('focusin', stopAutoRotate);
+  carousel.addEventListener('focusout', startAutoRotate);
+});
+</script>
