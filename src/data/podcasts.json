@@ -1,50 +1,82 @@
 [
   {
     "id": 1,
-    "title": "Remembering Your True Self",
-    "description": "In this episode, we explore what it means to remember who you truly are beneath all the conditioning and expectations.",
-    "duration": "42:15",
-    "date": "Dec 15, 2024",
+    "title": "Parsha Bereishit: In the Beginning",
+    "description": "We begin at the beginning - exploring creation, purpose, and what it means to be made in the divine image. This week we dive into the story of Adam and Eve and what their journey teaches us about our own relationship with choice, consciousness, and connection.",
+    "duration": "28:45",
+    "date": "Oct 12, 2024",
     "featured": true
   },
   {
     "id": 2,
-    "title": "The Sacred Art of Letting Go",
-    "description": "A deep dive into releasing what no longer serves you and creating space for what wants to emerge.",
-    "duration": "38:22",
-    "date": "Dec 8, 2024",
+    "title": "Parsha Noach: Starting Over",
+    "description": "The story of Noah isn't just about a flood - it's about what it means to rebuild, to start fresh, and to hold hope even when everything around you seems to be falling apart. We explore themes of renewal, faith, and finding solid ground.",
+    "duration": "32:18",
+    "date": "Oct 19, 2024",
     "featured": false
   },
   {
     "id": 3,
-    "title": "Living from Your Inner Knowing",
-    "description": "How to trust your intuition and make decisions from a place of deep inner wisdom rather than external validation.",
-    "duration": "45:18",
-    "date": "Dec 1, 2024",
+    "title": "Parsha Lech Lecha: Go Forth",
+    "description": "Abraham's journey begins with two simple words: Lech Lecha - go forth. But where? And why? This week we explore what it means to leave the familiar behind and step into your calling, even when you can't see the destination.",
+    "duration": "29:52",
+    "date": "Oct 26, 2024",
     "featured": false
   },
   {
     "id": 4,
-    "title": "Healing the Mother Wound",
-    "description": "An honest conversation about healing generational patterns and reclaiming your feminine power.",
-    "duration": "51:33",
-    "date": "Nov 24, 2024",
+    "title": "Parsha Vayera: Seeing Clearly",
+    "description": "When angels visit Abraham, he sees them immediately - but Lot has to be convinced. What does it mean to truly see? This week we dive into perception, hospitality, and recognizing the sacred in the ordinary.",
+    "duration": "31:15",
+    "date": "Nov 2, 2024",
     "featured": false
   },
   {
     "id": 5,
-    "title": "Embodiment vs. Spiritual Bypassing",
-    "description": "The difference between true embodiment and using spirituality to avoid feeling our emotions.",
-    "duration": "39:45",
-    "date": "Nov 17, 2024",
+    "title": "Parsha Chayei Sarah: A Life Well-Lived",
+    "description": "Sarah's life story teaches us about legacy, purpose, and what it means to live fully. We explore how to honor our past while creating space for what wants to emerge, and what it looks like to live with intention.",
+    "duration": "27:33",
+    "date": "Nov 9, 2024",
     "featured": false
   },
   {
     "id": 6,
-    "title": "Creating Sacred Boundaries",
-    "description": "How to set boundaries that honor your energy and create space for what truly matters.",
-    "duration": "44:12",
-    "date": "Nov 10, 2024",
+    "title": "Parsha Toldot: Family Patterns",
+    "description": "Isaac, Rebecca, Jacob, and Esau - a family story that feels surprisingly modern. This week we look at generational patterns, sibling dynamics, and how to break cycles while honoring where we come from.",
+    "duration": "33:42",
+    "date": "Nov 16, 2024",
+    "featured": false
+  },
+  {
+    "id": 7,
+    "title": "Parsha Vayetzei: Dreams and Ladders",
+    "description": "Jacob's dream of a ladder reaching to heaven isn't just a pretty image - it's a map for spiritual living. We explore what it means to live between heaven and earth, dreams and reality, the spiritual and the practical.",
+    "duration": "30:28",
+    "date": "Nov 23, 2024",
+    "featured": false
+  },
+  {
+    "id": 8,
+    "title": "Parsha Vayishlach: Wrestling with the Divine",
+    "description": "Jacob wrestles with an angel all night and emerges changed, wounded, and blessed. What does it mean to wrestle with the divine? This week we explore spiritual struggle, transformation, and finding blessing in our battles.",
+    "duration": "34:17",
+    "date": "Nov 30, 2024",
+    "featured": false
+  },
+  {
+    "id": 9,
+    "title": "Parsha Vayeshev: The Dreamer",
+    "description": "Joseph's coat, his dreams, and his brothers' jealousy - a story about vision, purpose, and what happens when you see a bigger picture that others can't yet understand. We explore calling, resilience, and trusting your inner knowing.",
+    "duration": "32:55",
+    "date": "Dec 7, 2024",
+    "featured": false
+  },
+  {
+    "id": 10,
+    "title": "Parsha Miketz: From Pit to Palace",
+    "description": "Joseph rises from prisoner to second-in-command of Egypt. This week we explore what it means to trust the process, find meaning in our trials, and recognize that sometimes our greatest struggles prepare us for our greatest service.",
+    "duration": "29:41",
+    "date": "Dec 14, 2024",
     "featured": false
   }
 ]

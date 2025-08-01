@@ -32,7 +32,7 @@ import Card from '../components/Card.astro';
               </Button>
               <Button variant="outline" size="large">
                 <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12v-2a8 8 0 10-16 0v2a2 2 0 012 2v4a2 2 0 01-2 2H3a1 1 0 01-1-1V12a10 10 0 1120 0v3a1 1 0 01-1 1h-1a2 2 0 01-2-2v-4a2 2 0 012-2z"/>
                 </svg>
                 Listen as Podcast
               </Button>
@@ -205,51 +205,105 @@ import Card from '../components/Card.astro';
     </div>
   </section>
 
-  <!-- Class Details Section -->
+  <!-- Latest Episode Section -->
   <section class="content-section content-section--dark">
+    <div class="section-floating-element section-floating-element--bottom-right"></div>
+
+    <div class="section-content">
+      <div class="section-header">
+        <h2 class="section-title">Latest Episode</h2>
+        <div class="section-divider section-divider--light"></div>
+      </div>
+
+      <div style="max-width: 64rem; margin: 0 auto;">
+        <Card variant="glass">
+          <div class="content-grid" style="align-items: start;">
+            <div style="grid-column: span 2;">
+              <div class="episode-meta episode-meta--light">
+                <svg class="meta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                </svg>
+                <span class="meta-text" id="latest-episode-date">Dec 21, 2024</span>
+                <svg class="meta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="meta-text" id="latest-episode-duration">32:15</span>
+              </div>
+              
+              <h3 style="font-size: 2.5rem; font-weight: 400; letter-spacing: 0.05em; margin-bottom: 1.5rem; color: rgba(255, 255, 255, 0.95); line-height: 1.2;" id="latest-episode-title">
+                Parsha Vayeshev: The Power of Dreams
+              </h3>
+              
+              <p style="font-size: 1.25rem; opacity: 0.85; line-height: 1.4; font-weight: 300; margin-bottom: 2rem; color: rgba(255, 255, 255, 0.85);" id="latest-episode-description">
+                Joseph's dreams weren't just nighttime visions - they were glimpses into divine purpose. This week we explore what it means to trust your inner knowing, even when others can't see your vision. How do we hold our dreams with humility while staying true to what we know in our souls?
+              </p>
+
+              <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                <Button variant="secondary" size="large" id="play-latest-episode">
+                  <svg class="btn-icon" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                  Play Episode
+                </Button>
+                <Button variant="outline" size="large" class="btn--outline">
+                  <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                  </svg>
+                  Download
+                </Button>
+              </div>
+            </div>
+          </div>
+        </Card>
+      </div>
+    </div>
+  </section>
+
+  <!-- Class Details Section -->
+  <section class="content-section content-section--light">
     <div class="section-floating-element section-floating-element--top-left"></div>
 
     <div class="section-content">
       <div class="section-header">
         <h2 class="section-title">Class Details</h2>
-        <div class="section-divider section-divider--light"></div>
+        <div class="section-divider"></div>
       </div>
 
       <div style="max-width: 48rem; margin: 0 auto;">
         <div class="grid grid--three-cols" style="gap: 3rem; margin-bottom: 3rem;">
-          <Card variant="glass">
+          <Card>
             <div style="text-align: center; padding: 2rem;">
-              <div style="width: 4rem; height: 4rem; background: rgba(248, 232, 212, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                <svg style="width: 2rem; height: 2rem; color: #F8E8D4;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div style="width: 4rem; height: 4rem; background: rgba(43, 27, 12, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                <svg style="width: 2rem; height: 2rem; color: #2b1b0c;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
                 </svg>
               </div>
-              <h3 style="font-size: 1.25rem; font-weight: 500; color: #F8E8D4; margin-bottom: 0.5rem;">Live Class</h3>
-              <p style="color: rgba(248, 232, 212, 0.8); margin: 0;">via Zoom</p>
+              <h3 style="font-size: 1.25rem; font-weight: 500; color: #2b1b0c; margin-bottom: 0.5rem;">Live Class</h3>
+              <p style="color: rgba(43, 27, 12, 0.7); margin: 0;">via Zoom</p>
             </div>
           </Card>
 
-          <Card variant="glass">
+          <Card>
             <div style="text-align: center; padding: 2rem;">
-              <div style="width: 4rem; height: 4rem; background: rgba(248, 232, 212, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                <svg style="width: 2rem; height: 2rem; color: #F8E8D4;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div style="width: 4rem; height: 4rem; background: rgba(43, 27, 12, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                <svg style="width: 2rem; height: 2rem; color: #2b1b0c;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2z"/>
                 </svg>
               </div>
-              <h3 style="font-size: 1.25rem; font-weight: 500; color: #F8E8D4; margin-bottom: 0.5rem;">Weekly</h3>
-              <p style="color: rgba(248, 232, 212, 0.8); margin: 0;">Thursdays 9:00 AM</p>
+              <h3 style="font-size: 1.25rem; font-weight: 500; color: #2b1b0c; margin-bottom: 0.5rem;">Weekly</h3>
+              <p style="color: rgba(43, 27, 12, 0.7); margin: 0;">Thursdays 9:00 AM</p>
             </div>
           </Card>
 
-          <Card variant="glass">
+          <Card>
             <div style="text-align: center; padding: 2rem;">
-              <div style="width: 4rem; height: 4rem; background: rgba(248, 232, 212, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
-                <svg style="width: 2rem; height: 2rem; color: #F8E8D4;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div style="width: 4rem; height: 4rem; background: rgba(43, 27, 12, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                <svg style="width: 2rem; height: 2rem; color: #2b1b0c;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
                 </svg>
               </div>
-              <h3 style="font-size: 1.25rem; font-weight: 500; color: #F8E8D4; margin-bottom: 0.5rem;">Available</h3>
-              <p style="color: rgba(248, 232, 212, 0.8); margin: 0;">as a Podcast</p>
+              <h3 style="font-size: 1.25rem; font-weight: 500; color: #2b1b0c; margin-bottom: 0.5rem;">Available</h3>
+              <p style="color: rgba(43, 27, 12, 0.7); margin: 0;">as a Podcast</p>
             </div>
           </Card>
         </div>
@@ -279,7 +333,7 @@ import Card from '../components/Card.astro';
           </Button>
           <Button variant="secondary" size="large">
             <svg class="btn-icon btn-icon--large" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2M7 4a2 2 0 00-2 2v11a2 2 0 002 2h10a2 2 0 002-2V6a2 2 0 00-2-2M7 4h10M9 9h6M9 13h6"/>
             </svg>
             Listen as Podcast
           </Button>
@@ -290,70 +344,252 @@ import Card from '../components/Card.astro';
 </Layout>
 
 <script>
-// Testimonials Carousel Functionality
-document.addEventListener('DOMContentLoaded', function() {
-  const carousel = document.getElementById('testimonials-carousel');
-  if (!carousel) return;
-  
-  const slides = carousel.querySelectorAll('.testimonial-slide');
-  const dots = document.querySelectorAll('.testimonial-dot');
-  const prevBtn = document.getElementById('prev-testimonial');
-  const nextBtn = document.getElementById('next-testimonial');
-  
-  let currentSlide = 0;
-  const totalSlides = slides.length;
-  let autoRotate;
-  
-  function showSlide(index) {
-    // Remove active class from all slides and dots
-    slides.forEach(slide => slide.classList.remove('active'));
-    dots.forEach(dot => dot.classList.remove('active'));
+// RSS Feed Integration for Latest Episode
+async function loadLatestEpisode() {
+  try {
+    const RSS_URL = 'https://anchor.fm/s/101e42184/podcast/rss';
+    console.log('Fetching latest episode from RSS feed...');
     
-    // Add active class to current slide and dot
-    if (slides[index]) slides[index].classList.add('active');
-    if (dots[index]) dots[index].classList.add('active');
-    
-    currentSlide = index;
-  }
-  
-  function nextSlide() {
-    const next = (currentSlide + 1) % totalSlides;
-    showSlide(next);
-  }
-  
-  function prevSlide() {
-    const prev = (currentSlide - 1 + totalSlides) % totalSlides;
-    showSlide(prev);
-  }
-  
-  function startAutoRotate() {
-    autoRotate = setInterval(nextSlide, 6000); // Change every 6 seconds for longer testimonials
-  }
-  
-  function stopAutoRotate() {
-    if (autoRotate) {
-      clearInterval(autoRotate);
+    const response = await fetch(RSS_URL);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
+    
+    function formatDuration(duration) {
+      if (!duration || duration === 'Unknown') return 'Unknown';
+      
+      // Handle HH:MM:SS format (like 00:29:56)
+      if (duration.includes(':')) {
+        const parts = duration.split(':');
+        if (parts.length === 3) {
+          // HH:MM:SS format
+          const hours = parseInt(parts[0], 10);
+          const minutes = parseInt(parts[1], 10);
+          const seconds = parseInt(parts[2], 10);
+          
+          // Round to nearest minute
+          let totalMinutes = hours * 60 + minutes;
+          if (seconds >= 30) totalMinutes += 1; // Round up if 30+ seconds
+          
+          if (totalMinutes >= 60) {
+            const hrs = Math.floor(totalMinutes / 60);
+            const mins = totalMinutes % 60;
+            return mins > 0 ? `${hrs}h ${mins}min` : `${hrs}h`;
+          } else {
+            return `${totalMinutes} min`;
+          }
+        } else if (parts.length === 2) {
+          // MM:SS format
+          const minutes = parseInt(parts[0], 10);
+          const seconds = parseInt(parts[1], 10);
+          
+          let totalMinutes = minutes;
+          if (seconds >= 30) totalMinutes += 1; // Round up if 30+ seconds
+          
+          return `${totalMinutes} min`;
+        }
+      }
+      
+      // Handle seconds-only format (like "1796")
+      if (!isNaN(duration)) {
+        const totalSeconds = parseInt(duration, 10);
+        const minutes = Math.round(totalSeconds / 60);
+        
+        if (minutes >= 60) {
+          const hours = Math.floor(minutes / 60);
+          const remainingMinutes = minutes % 60;
+          return remainingMinutes > 0 ? `${hours}h ${remainingMinutes}min` : `${hours}h`;
+        } else {
+          return `${minutes} min`;
+        }
+      }
+      
+      // Return as-is if we can't parse it
+      return duration;
+    }
+    
+    const rssText = await response.text();
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(rssText, 'application/xml');
+    
+    const channel = xmlDoc.querySelector('channel');
+    if (!channel) {
+      throw new Error('No channel found in RSS feed');
+    }
+    
+    // Get the first (latest) episode
+    const latestItem = channel.querySelector('item');
+    if (!latestItem) {
+      throw new Error('No episodes found in RSS feed');
+    }
+    
+    // Extract episode data
+    const title = latestItem.querySelector('title')?.textContent || 'Latest Episode';
+    const description = latestItem.querySelector('description')?.textContent || '';
+    const pubDateRaw = latestItem.querySelector('pubDate')?.textContent;
+    
+    // Try multiple ways to get duration - RSS feeds can use different namespace formats
+    let durationRaw = 'Unknown';
+    
+    // Try different selectors for duration
+    const durationSelectors = [
+      'itunes\\:duration',
+      'duration',
+      '[*|duration]'
+    ];
+    
+    for (const selector of durationSelectors) {
+      try {
+        const durationElement = latestItem.querySelector(selector);
+        if (durationElement && durationElement.textContent && durationElement.textContent.trim()) {
+          durationRaw = durationElement.textContent.trim();
+          break;
+        }
+      } catch (e) {
+        // Continue to next selector
+      }
+    }
+    
+    // If still no duration found, try getElementsByTagName approach
+    if (durationRaw === 'Unknown') {
+      try {
+        const itunesDuration = latestItem.getElementsByTagName('itunes:duration')[0];
+        if (itunesDuration && itunesDuration.textContent) {
+          durationRaw = itunesDuration.textContent.trim();
+        }
+      } catch (e) {
+        // Try without namespace
+        try {
+          const simpleDuration = latestItem.getElementsByTagName('duration')[0];
+          if (simpleDuration && simpleDuration.textContent) {
+            durationRaw = simpleDuration.textContent.trim();
+          }
+        } catch (e2) {
+          console.warn('Could not parse duration from RSS feed');
+        }
+      }
+    }
+    
+    // Clean and format the data
+    const cleanTitle = title.trim();
+    let cleanDescription = description
+      .replace(/<[^>]*>/g, '') // Remove HTML tags
+      .replace(/&[^;]+;/g, ' ') // Remove HTML entities
+      .replace(/\s+/g, ' ') // Normalize whitespace
+      .trim();
+    
+    if (cleanDescription.length > 300) {
+      cleanDescription = cleanDescription.substring(0, 300) + '...';
+    }
+    
+    // Format date
+    let formattedDate = 'Recent';
+    if (pubDateRaw) {
+      try {
+        const date = new Date(pubDateRaw);
+        formattedDate = date.toLocaleDateString('en-US', { 
+          year: 'numeric', 
+          month: 'short', 
+          day: 'numeric' 
+        });
+      } catch (e) {
+        console.warn('Could not parse date:', pubDateRaw);
+      }
+    }
+    
+    // Update the DOM elements
+    const titleElement = document.getElementById('latest-episode-title');
+    const descriptionElement = document.getElementById('latest-episode-description');
+    const dateElement = document.getElementById('latest-episode-date');
+    const durationElement = document.getElementById('latest-episode-duration');
+    
+    if (titleElement) titleElement.textContent = cleanTitle;
+    if (descriptionElement) descriptionElement.textContent = cleanDescription;
+    if (dateElement) dateElement.textContent = formattedDate;
+    if (durationElement) durationElement.textContent = formatDuration(durationRaw);
+    
+    // Get audio URL for play button
+    const enclosure = latestItem.querySelector('enclosure');
+    const audioUrl = enclosure?.getAttribute('url');
+    
+    if (audioUrl) {
+      const playButton = document.getElementById('play-latest-episode');
+      if (playButton) {
+        playButton.addEventListener('click', () => {
+          // Open audio in new tab or trigger download
+          window.open(audioUrl, '_blank');
+        });
+      }
+    }
+    
+    console.log('Latest episode loaded successfully:', cleanTitle);
+    
+  } catch (error) {
+    console.warn('Could not load latest episode from RSS feed:', error.message);
+    // Fallback content is already in the HTML, so we don't need to do anything
+  }
+}
+
+// Load latest episode when page loads
+document.addEventListener('DOMContentLoaded', function() {
+  // Load testimonials carousel (existing code)
+  const carousel = document.getElementById('testimonials-carousel');
+  if (carousel) {
+    const slides = carousel.querySelectorAll('.testimonial-slide');
+    const dots = document.querySelectorAll('.testimonial-dot');
+    const prevBtn = document.getElementById('prev-testimonial');
+    const nextBtn = document.getElementById('next-testimonial');
+    
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+    let autoRotate;
+    
+    function showSlide(index) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+      
+      if (slides[index]) slides[index].classList.add('active');
+      if (dots[index]) dots[index].classList.add('active');
+      
+      currentSlide = index;
+    }
+    
+    function nextSlide() {
+      const next = (currentSlide + 1) % totalSlides;
+      showSlide(next);
+    }
+    
+    function prevSlide() {
+      const prev = (currentSlide - 1 + totalSlides) % totalSlides;
+      showSlide(prev);
+    }
+    
+    function startAutoRotate() {
+      autoRotate = setInterval(nextSlide, 6000);
+    }
+    
+    function stopAutoRotate() {
+      if (autoRotate) {
+        clearInterval(autoRotate);
+      }
+    }
+    
+    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+    
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => showSlide(index));
+    });
+    
+    startAutoRotate();
+    
+    carousel.addEventListener('mouseenter', stopAutoRotate);
+    carousel.addEventListener('mouseleave', startAutoRotate);
+    carousel.addEventListener('focusin', stopAutoRotate);
+    carousel.addEventListener('focusout', startAutoRotate);
   }
   
-  // Event listeners
-  if (nextBtn) nextBtn.addEventListener('click', nextSlide);
-  if (prevBtn) prevBtn.addEventListener('click', prevSlide);
-  
-  // Dot navigation
-  dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => showSlide(index));
-  });
-  
-  // Auto-rotate testimonials
-  startAutoRotate();
-  
-  // Pause auto-rotation on hover
-  carousel.addEventListener('mouseenter', stopAutoRotate);
-  carousel.addEventListener('mouseleave', startAutoRotate);
-  
-  // Pause on focus for accessibility
-  carousel.addEventListener('focusin', stopAutoRotate);
-  carousel.addEventListener('focusout', startAutoRotate);
+  // Load latest episode from RSS feed
+  loadLatestEpisode();
 });
 </script>
