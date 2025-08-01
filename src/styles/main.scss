@@ -1177,17 +1177,18 @@ img {
           // Enhance overlay on hover
           > div:first-child {
             background: linear-gradient(
-              180deg, 
-              rgba($color-primary, 0.4), 
-              transparent, 
+              180deg,
+              rgba($color-primary, 0.4),
+              transparent,
               rgba($color-primary, 0.7)
             );
           }
 
           // Text glow effect on hover
-          h3, p {
-            text-shadow: 0 2px 8px rgba($color-accent, 0.3), 
-                         0 4px 16px rgba(0,0,0,0.4);
+          h3,
+          p {
+            text-shadow: 0 2px 8px rgba($color-accent, 0.3),
+              0 4px 16px rgba(0, 0, 0, 0.4);
           }
         }
 
@@ -1237,7 +1238,8 @@ img {
 
 // Optional: Add a subtle animation for the podcast card
 @keyframes podcastPulse {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   }
   50% {
@@ -1253,7 +1255,7 @@ img {
 @media (prefers-reduced-motion: reduce) {
   .podcast-image-wrapper {
     animation: none;
-    
+
     &:hover {
       transform: none;
     }
@@ -1895,9 +1897,9 @@ img {
         position: absolute;
         inset: -2px;
         background: linear-gradient(
-          135deg, 
-          rgba($color-accent, 0.3), 
-          rgba($color-white, 0.1), 
+          135deg,
+          rgba($color-accent, 0.3),
+          rgba($color-white, 0.1),
           rgba($color-accent, 0.3)
         );
         border-radius: 1.5rem;
@@ -2146,7 +2148,8 @@ img {
 
 // Animation Enhancements
 @keyframes offeringFloat {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) rotate(0deg);
   }
   25% {
@@ -2992,5 +2995,23 @@ img {
 }
 
 .podcast-embed {
-    width: 100%;
+  width: 100%;
+}
+
+// Keyframes for scroll arrow animation
+@keyframes arrowBounce {
+ 0%, 100% {
+   transform: translateY(0);
+ }
+ 50% {
+   transform: translateY(-10px);
+ }
+}
+
+.hero-scroll-arrow img {
+ width: 30px;
+ color: white;
+ filter: brightness(0) invert(1);
+ margin-top: 3rem;
+ animation: arrowBounce 2s ease-in-out infinite;
 }
