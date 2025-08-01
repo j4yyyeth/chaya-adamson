@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
 import Card from '../components/Card.astro';
+import { Icon } from 'astro-icon/components';
 ---
 
 <Layout title="Parsha with Purpose - Chaya Adamson">
@@ -29,35 +30,11 @@ import Card from '../components/Card.astro';
                 size="large"
                 href="https://chat.whatsapp.com/DTm0JXsgkME9COv772vAaU"
               >
-                <svg
-                  class="btn-icon"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-                  ></path>
-                </svg>
+                <Icon name="mdi:whatsapp" />
                 Join WhatsApp Group
               </Button>
               <Button variant="outline" size="large">
-                <svg
-                  class="btn-icon"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M12 1a9 9 0 00-9 9v7c0 1.66 1.34 3 3 3h1c1.66 0 3-1.34 3-3v-3c0-1.66-1.34-3-3-3H6v-1a6 6 0 1112 0v1h-1c-1.66 0-3 1.34-3 3v3c0 1.66 1.34 3 3 3h1c1.66 0 3-1.34 3-3v-7a9 9 0 00-9-9z"
-                  ></path>
-                </svg>
+                <Icon name="mdi:headphones" />
                 Listen as Podcast
               </Button>
             </div>
@@ -143,19 +120,7 @@ import Card from '../components/Card.astro';
               <div
                 style="width: 4rem; height: 4rem; background: rgba(248, 232, 212, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;"
               >
-                <svg
-                  style="width: 2rem; height: 2rem; color: #F8E8D4;"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                  ></path>
-                </svg>
+                <Icon name="mdi:heart" size={30} />
               </div>
               <p
                 style="font-size: 1.25rem; color: rgba(255, 255, 255, 0.9); line-height: 1.4; margin: 0;"
@@ -170,19 +135,7 @@ import Card from '../components/Card.astro';
               <div
                 style="width: 4rem; height: 4rem; background: rgba(248, 232, 212, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;"
               >
-                <svg
-                  style="width: 2rem; height: 2rem; color: #F8E8D4;"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707"
-                  ></path>
-                </svg>
+                <Icon name="mdi:flower-lotus" size={30} />
               </div>
               <p
                 style="font-size: 1.25rem; color: rgba(255, 255, 255, 0.9); line-height: 1.4; margin: 0;"
@@ -198,24 +151,29 @@ import Card from '../components/Card.astro';
               <div
                 style="width: 4rem; height: 4rem; background: rgba(248, 232, 212, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;"
               >
-                <svg
-                  style="width: 2rem; height: 2rem; color: #F8E8D4;"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                </svg>
+                <Icon name="mdi:venn-diagram" size={30} />
               </div>
               <p
                 style="font-size: 1.25rem; color: rgba(255, 255, 255, 0.9); line-height: 1.4; margin: 0;"
               >
                 You're integrating spirituality with personal healing and
                 self-leadership.
+              </p>
+            </div>
+          </Card>
+
+          <Card variant="glass">
+            <div style="text-align: center; padding: 2rem;">
+              <div
+                style="width: 4rem; height: 4rem; background: rgba(248, 232, 212, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;"
+              >
+                <Icon name="mdi:account-clock" size={30} />
+              </div>
+              <p
+                style="font-size: 1.25rem; color: rgba(255, 255, 255, 0.9); line-height: 1.4; margin: 0;"
+              >
+                You're a busy woman who want to learn, short accessible, work,
+                carpool, live or podcast
               </p>
             </div>
           </Card>
@@ -385,34 +343,9 @@ import Card from '../components/Card.astro';
           <div class="content-grid" style="align-items: start;">
             <div style="grid-column: span 2;">
               <div class="episode-meta episode-meta--light">
-                <svg
-                  class="meta-icon"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2z"
-                  ></path>
-                </svg>
-                <span class="meta-text" id="latest-episode-date"
-                  >Dec 21, 2024</span
-                >
-                <svg
-                  class="meta-icon"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
+                <Icon name="mdi:calendar" />
+                <span class="meta-text" id="latest-episode-date"></span>
+                <Icon name="mdi:clock-time-four-outline" />
                 <span class="meta-text" id="latest-episode-duration">32:15</span
                 >
               </div>
@@ -446,22 +379,6 @@ import Card from '../components/Card.astro';
                   </svg>
                   Play Episode
                 </Button>
-                <Button variant="outline" size="large" class="btn--outline">
-                  <svg
-                    class="btn-icon"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                    ></path>
-                  </svg>
-                  Download
-                </Button>
               </div>
             </div>
           </div>
@@ -487,23 +404,11 @@ import Card from '../components/Card.astro';
           style="gap: 3rem; margin-bottom: 3rem;"
         >
           <Card>
-            <div style="text-align: center; padding: 2rem;">
+            <div style="text-align: center;">
               <div
                 style="width: 4rem; height: 4rem; background: rgba(43, 27, 12, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;"
               >
-                <svg
-                  style="width: 2rem; height: 2rem; color: #2b1b0c;"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
-                  ></path>
-                </svg>
+                <Icon name="mdi:video" size={30} />
               </div>
               <h3
                 style="font-size: 1.25rem; font-weight: 500; color: #2b1b0c; margin-bottom: 0.5rem;"
@@ -515,23 +420,11 @@ import Card from '../components/Card.astro';
           </Card>
 
           <Card>
-            <div style="text-align: center; padding: 2rem;">
+            <div style="text-align: center;">
               <div
                 style="width: 4rem; height: 4rem; background: rgba(43, 27, 12, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;"
               >
-                <svg
-                  style="width: 2rem; height: 2rem; color: #2b1b0c;"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2z"
-                  ></path>
-                </svg>
+                <Icon name="mdi:calendar-multiple" size={30} />
               </div>
               <h3
                 style="font-size: 1.25rem; font-weight: 500; color: #2b1b0c; margin-bottom: 0.5rem;"
@@ -545,23 +438,11 @@ import Card from '../components/Card.astro';
           </Card>
 
           <Card>
-            <div style="text-align: center; padding: 2rem;">
+            <div style="text-align: center;">
               <div
                 style="width: 4rem; height: 4rem; background: rgba(43, 27, 12, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;"
               >
-                <svg
-                  style="width: 2rem; height: 2rem; color: #2b1b0c;"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
-                  ></path>
-                </svg>
+                <Icon name="mdi:podcast" size={30} />
               </div>
               <h3
                 style="font-size: 1.25rem; font-weight: 500; color: #2b1b0c; margin-bottom: 0.5rem;"
@@ -569,7 +450,7 @@ import Card from '../components/Card.astro';
                 Available
               </h3>
               <p style="color: rgba(43, 27, 12, 0.7); margin: 0;">
-                as a Podcast
+                on Spotify and Apple Podcasts
               </p>
             </div>
           </Card>
@@ -590,8 +471,7 @@ import Card from '../components/Card.astro';
           <p
             style="font-size: 1.5rem; opacity: 0.8; font-weight: 300; line-height: 1.4;"
           >
-            Experience Torah like never before. Join women from around the world
-            in discovering the living wisdom within each parsha.
+            Experience Torah like never before.
           </p>
         </div>
 
@@ -603,35 +483,11 @@ import Card from '../components/Card.astro';
             size="large"
             href="https://chat.whatsapp.com/DTm0JXsgkME9COv772vAaU"
           >
-            <svg
-              class="btn-icon btn-icon--large"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-              ></path>
-            </svg>
+            <Icon name="mdi:whatsapp" />
             Join Live Class
           </Button>
           <Button variant="secondary" size="large">
-            <svg
-              class="btn-icon btn-icon--large"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2M7 4a2 2 0 00-2 2v11a2 2 0 002 2h10a2 2 0 002-2V6a2 2 0 00-2-2M7 4h10M9 9h6M9 13h6"
-              ></path>
-            </svg>
+            <Icon name="mdi:headphones" />
             Listen as Podcast
           </Button>
         </div>

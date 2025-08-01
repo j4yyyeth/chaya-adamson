@@ -61,7 +61,7 @@ import Card from '../components/Card.astro';
   </section>
 
   <!-- My Story Section -->
-  <section class="content-section content-section--dark my-story-section">
+<section class="content-section content-section--dark my-story-section">
     <div class="section-content">
       <div class="section-header">
         <h2 class="section-title">My Story</h2>
@@ -121,11 +121,10 @@ import Card from '../components/Card.astro';
           </p>
         </div>
 
-        <div style="display: flex; justify-content: center;">
-          <div class="image-container image-container--floating">
+        <div class="story-image-container">
+          <div class="image-container image-container--floating image-container--circular">
             <div class="floating-effect"></div>
-            <div class="image-wrapper" style="width: 24rem; height: 31.25rem;">
-              <img src="/images/img.jpg" alt="Chaya Adamson" />
+            <div class="image-wrapper" style="background-image: url('./images/img.jpg'), url('/images/img.jpg'), url('images/img.jpg');">
               <div class="image-overlay"></div>
             </div>
           </div>
