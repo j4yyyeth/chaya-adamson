@@ -21,9 +21,10 @@ import Card from '../components/Card.astro';
       <div style="max-width: 80rem; margin: 0 auto; text-align: center;">
         <h1 class="hero-title">You already know.</h1>
         <p class="hero-subtitle">Let me remind you who you are.</p>
+		<p class="hero-subtitle two">For spiritually-connected, self-led humans ready to embody the next level.</p>
         <div style="padding-top: 2rem;">
-          <Button variant="outline" size="large" href="/contact">
-            Begin Your Journey
+          <Button variant="outline" size="large" href="/offerings">
+            Explore Offerings
           </Button>
         </div>
       </div>
@@ -55,7 +56,7 @@ import Card from '../components/Card.astro';
 
   <!-- My Story Section -->
   <section class="content-section content-section--dark">
-    <div class="section-content">
+    <div class="section-content box-content">
       <div class="section-header">
         <h2 class="section-title">My Story</h2>
         <div class="section-divider section-divider--light"></div>
@@ -95,9 +96,22 @@ import Card from '../components/Card.astro';
           </p>
           <p
             class="text-large special-text"
-            style="color: #F8E8D4; font-style: italic; font-size: 1.5rem;"
+            style="font-style: italic; font-size: 1.5rem;"
           >
             And my deepest desire is to help you find yours.
+          </p>
+          <p class="text-large centered" style="margin-top: 5rem;">
+            I don’t believe in fixing.
+          </p>
+          <p class="text-large centered">I believe in remembering.</p>
+          <p class="text-large centered">
+            You’re not starting from scratch. You’re starting from source.
+          </p>
+          <p
+            class="text-large special-text centered"
+            style="font-style: italic; font-size: 1.5rem;"
+          >
+            Your knowing is sacred. Your movement is divine.
           </p>
         </div>
 
@@ -132,10 +146,10 @@ import Card from '../components/Card.astro';
           <p
             style="font-size: 1.5rem; font-weight: 300; line-height: 1.4; margin-bottom: 1rem;"
           >
-            You're not here to be small.
+            You're not here to be fixed.
           </p>
           <p style="font-size: 1.5rem; font-weight: 300; line-height: 1.4;">
-            You're here to be seen, witnessed, and moved.
+            You're here to be witnessed, mirrored, and moved.
           </p>
         </Card>
 
@@ -144,10 +158,10 @@ import Card from '../components/Card.astro';
           <p
             style="font-size: 1.5rem; font-weight: 300; line-height: 1.4; margin-bottom: 1rem;"
           >
-            You're not looking for someone else's voice.
+            You’re not looking for motivation.
           </p>
           <p style="font-size: 1.5rem; font-weight: 300; line-height: 1.4;">
-            You're looking for your own.
+            You’re looking for resonance.
           </p>
         </Card>
       </div>
@@ -155,34 +169,48 @@ import Card from '../components/Card.astro';
   </section>
 
   <!-- Philosophy Section -->
-  <section class="content-section content-section--dark">
-    <div
-      class="container"
-      style="max-width: 80rem; margin: 0 auto; text-align: center;"
-    >
-      <div
-        style="display: inline-block; padding: 2rem; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(4px); border-radius: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.1); margin-bottom: 5rem;"
-      >
-        <p style="font-size: 1.5rem; line-height: 1.4; font-weight: 300;">
-          My work is for those who have already done the seeking, who are
-          already doing the work, and are ready to move with <span
-            class="text-highlight">clarity</span
-          >,
-          <span class="text-highlight">power</span>, and
-          <span class="text-highlight">presence</span> into embodiment.
-        </p>
-      </div>
+  <section class="content-section content-section--dark philosophy-section">
+    <div class="philosophy-container">
+      <!-- Central animated line -->
+      <div class="philosophy-line"></div>
 
-      <div
-        style="display: inline-block; padding: 2rem; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(4px); border-radius: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.1);"
-      >
-        <p style="font-size: 1.5rem; line-height: 1.4; font-weight: 300;">
-          There is nothing to prove and nothing to be, other than exactly as you
-          already are. Welcome to the space where your <span
-            class="text-highlight text-highlight--italic"
-            >knowing becomes your guide</span
-          >.
-        </p>
+      <!-- Philosophy items -->
+      <div class="philosophy-items">
+        <!-- Item 1 - Left side -->
+        <div class="philosophy-item">
+          <div class="philosophy-content">
+            <p>
+              My work is for those who have already done the seeking, who are
+              already doing the work, and are ready to move with <span
+                class="text-highlight">clarity</span
+              >,
+              <span class="text-highlight">power</span>, and
+              <span class="text-highlight">presence</span> into embodiment.
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 2 - Right side -->
+        <div class="philosophy-item">
+          <div class="philosophy-content">
+            <p>
+              There is nothing to prove and nothing to be, other than exactly as
+              you already are.
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 3 - Left side -->
+        <div class="philosophy-item">
+          <div class="philosophy-content">
+            <p>
+              Welcome to the space where your <span
+                class="text-highlight text-highlight--italic"
+                >knowing becomes your guide</span
+              >.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </section>

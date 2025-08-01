@@ -1,5 +1,5 @@
 // Fixed GSAP Animations for Chaya Adamson Site
-// No header/footer animations, optimized card hovers
+// Enhanced with header scroll effect and philosophy section animations
 
 (function() {
   'use strict';
@@ -125,6 +125,8 @@
       this.animateCards();
       this.animateButtons();
       this.animateFloatingElements();
+      this.initHeaderScrollEffect();
+      this.animatePhilosophySection();
     },
 
     setInitialStates() {
@@ -417,6 +419,112 @@
           ease: "power1.inOut",
           yoyo: true,
           repeat: -1
+        });
+      });
+    },
+
+    // Header scroll effect
+    initHeaderScrollEffect() {
+      const header = document.querySelector('.site-header');
+      if (!header) return;
+
+      let isScrolled = false;
+
+      const handleScroll = () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const shouldBeScrolled = scrollTop > 50;
+
+        if (shouldBeScrolled !== isScrolled) {
+          isScrolled = shouldBeScrolled;
+          
+          if (isScrolled) {
+            header.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
+          }
+        }
+      };
+
+      window.addEventListener('scroll', handleScroll);
+      handleScroll(); // Initial check
+    },
+
+    // Philosophy section animations
+    animatePhilosophySection() {
+      const philosophySection = document.querySelector('.philosophy-section');
+      if (!philosophySection) return;
+
+      const line = philosophySection.querySelector('.philosophy-line');
+      const items = philosophySection.querySelectorAll('.philosophy-item');
+
+      if (!line || !items.length) return;
+
+      // Set initial states
+      this.gsap.set(line, { 
+        opacity: 0, 
+        scaleY: 0,
+        transformOrigin: "top center"
+      });
+
+      this.gsap.set(items, { 
+        opacity: 0, 
+        y: 60,
+        x: (index) => index % 2 === 0 ? -40 : 40
+      });
+
+      if (!this.ScrollTrigger) {
+        // Fallback without ScrollTrigger
+        this.gsap.to(line, {
+          opacity: 1,
+          scaleY: 1,
+          duration: 1.5,
+          ease: "power2.out",
+          delay: 0.5
+        });
+
+        this.gsap.to(items, {
+          opacity: 1,
+          y: 0,
+          x: 0,
+          duration: 1,
+          stagger: 0.3,
+          ease: "power2.out",
+          delay: 1
+        });
+        return;
+      }
+
+      // Animate line first
+      this.ScrollTrigger.create({
+        trigger: philosophySection,
+        start: "top 80%",
+        once: true,
+        onEnter: () => {
+          this.gsap.to(line, {
+            opacity: 1,
+            scaleY: 1,
+            duration: 1.5,
+            ease: "power2.out"
+          });
+        }
+      });
+
+      // Animate items as they come into view
+      items.forEach((item, index) => {
+        this.ScrollTrigger.create({
+          trigger: item,
+          start: "top 85%",
+          once: true,
+          onEnter: () => {
+            this.gsap.to(item, {
+              opacity: 1,
+              y: 0,
+              x: 0,
+              duration: 1.2,
+              ease: "back.out(1.7)",
+              delay: index * 0.1
+            });
+          }
         });
       });
     },
