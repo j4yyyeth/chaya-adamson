@@ -506,3 +506,86 @@ import Card from '../components/Card.astro';
     </div>
   </section>
 </Layout>
+
+<script>
+  // Testimonials Carousel Functionality
+  document.addEventListener('DOMContentLoaded', function () {
+    const carousel = document.getElementById('testimonials-carousel');
+    const slides = carousel.querySelectorAll('.testimonial-slide');
+    const dots = document.querySelectorAll('.testimonial-dot');
+    const prevBtn = document.getElementById('prev-testimonial');
+    const nextBtn = document.getElementById('next-testimonial');
+
+    let currentSlide = 0;
+    let autoRotate;
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+      // Remove active class from all slides and dots
+      slides.forEach((slide) => slide.classList.remove('active'));
+      dots.forEach((dot) => dot.classList.remove('active'));
+
+      // Add active class to current slide and dot
+      slides[index].classList.add('active');
+      dots[index].classList.add('active');
+
+      currentSlide = index;
+    }
+
+    function nextSlide() {
+      const next = (currentSlide + 1) % totalSlides;
+      showSlide(next);
+    }
+
+    function prevSlide() {
+      const prev = (currentSlide - 1 + totalSlides) % totalSlides;
+      showSlide(prev);
+    }
+
+    function startAutoRotate() {
+      autoRotate = setInterval(nextSlide, 5000); // Change every 5 seconds
+    }
+
+    function stopAutoRotate() {
+      clearInterval(autoRotate);
+    }
+
+    // Event listeners
+    nextBtn.addEventListener('click', () => {
+      nextSlide();
+      stopAutoRotate();
+      startAutoRotate(); // Restart auto-rotation
+    });
+
+    prevBtn.addEventListener('click', () => {
+      prevSlide();
+      stopAutoRotate();
+      startAutoRotate(); // Restart auto-rotation
+    });
+
+    // Dot navigation
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        showSlide(index);
+        stopAutoRotate();
+        startAutoRotate(); // Restart auto-rotation
+      });
+    });
+
+    // Start auto-rotation
+    startAutoRotate();
+
+    // Pause auto-rotation on hover
+    carousel.addEventListener('mouseenter', stopAutoRotate);
+    carousel.addEventListener('mouseleave', startAutoRotate);
+
+    // Handle visibility change to pause when tab is not active
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        stopAutoRotate();
+      } else {
+        startAutoRotate();
+      }
+    });
+  });
+</script>
