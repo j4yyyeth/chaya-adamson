@@ -65,6 +65,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  overflow-y: auto !important; // Prevent horizontal scroll
 }
 
 // WebKit browsers (Chrome, Safari, Edge)
