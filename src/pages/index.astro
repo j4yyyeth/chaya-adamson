@@ -21,7 +21,10 @@ import Card from '../components/Card.astro';
       <div style="max-width: 80rem; margin: 0 auto; text-align: center;">
         <h1 class="hero-title">You already know.</h1>
         <p class="hero-subtitle">Let me remind you who you are.</p>
-		<p class="hero-subtitle two">For spiritually-connected, self-led humans ready to embody the next level.</p>
+        <p class="hero-subtitle two">
+          For spiritually-connected, self-led humans ready to embody the next
+          level.
+        </p>
         <div style="padding-top: 2rem;">
           <Button variant="outline" size="large" href="/offerings">
             Explore Offerings
@@ -29,16 +32,28 @@ import Card from '../components/Card.astro';
         </div>
       </div>
     </div>
+
+    <!-- Scroll Down Arrow -->
+    <div class="hero-scroll-arrow" id="scroll-to-mission">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M7 10L12 15L17 10"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"></path>
+      </svg>
+    </div>
   </section>
 
-  <!-- Mission Section -->
+  <!-- Mission Section with Parallax -->
   <section
     class="content-section content-section--light mission-section-enhanced"
   >
     <div class="section-floating-element section-floating-element--top-left">
     </div>
     <div class="container" style="text-align: center;">
-      <div style="max-width: 64rem; margin: 0 auto;">
+      <div style="margin: 0 auto;">
         <div class="mission-content">
           <h2 class="section-title">Mission</h2>
           <div class="section-divider"></div>
@@ -55,8 +70,8 @@ import Card from '../components/Card.astro';
   </section>
 
   <!-- My Story Section -->
-  <section class="content-section content-section--dark">
-    <div class="section-content box-content">
+  <section class="content-section content-section--dark my-story-section">
+    <div class="section-content">
       <div class="section-header">
         <h2 class="section-title">My Story</h2>
         <div class="section-divider section-divider--light"></div>
@@ -101,11 +116,11 @@ import Card from '../components/Card.astro';
             And my deepest desire is to help you find yours.
           </p>
           <p class="text-large centered" style="margin-top: 5rem;">
-            I don’t believe in fixing.
+            I don't believe in fixing.
           </p>
           <p class="text-large centered">I believe in remembering.</p>
           <p class="text-large centered">
-            You’re not starting from scratch. You’re starting from source.
+            You're not starting from scratch. You're starting from source.
           </p>
           <p
             class="text-large special-text centered"
@@ -158,10 +173,10 @@ import Card from '../components/Card.astro';
           <p
             style="font-size: 1.5rem; font-weight: 300; line-height: 1.4; margin-bottom: 1rem;"
           >
-            You’re not looking for motivation.
+            You're not looking for motivation.
           </p>
           <p style="font-size: 1.5rem; font-weight: 300; line-height: 1.4;">
-            You’re looking for resonance.
+            You're looking for resonance.
           </p>
         </Card>
       </div>

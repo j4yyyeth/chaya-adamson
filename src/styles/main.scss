@@ -2165,13 +2165,13 @@ img {
 
 // Alternative: If you want to make it even more prominent
 .mission-section-enhanced {
-  padding: 10rem 0;
+  padding: 3rem 0;
 
   .mission-content {
     background: rgba($color-white, 0.4);
     backdrop-filter: blur(8px);
     border-radius: 2rem;
-    padding: 4rem 3rem;
+    padding: 2rem 2rem;
     box-shadow: 0 25px 50px -12px rgba($color-primary, 0.1);
     border: 1px solid rgba($color-white, 0.5);
 
@@ -2238,7 +2238,7 @@ img {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-weight: 600 !important;
-  color: #2b1b0c;
+//   color: #2b1b0c;
 }
 
 .box-content {

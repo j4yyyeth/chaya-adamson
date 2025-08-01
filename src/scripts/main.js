@@ -115,6 +115,46 @@
       });
     },
 
+    // Parallax effect for mission section
+    initParallaxEffect() {
+      const missionSection = document.querySelector('.mission-section-parallax');
+      if (!missionSection || !this.ScrollTrigger) return;
+
+      this.ScrollTrigger.create({
+        trigger: missionSection,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1,
+        onUpdate: (self) => {
+          const progress = self.progress;
+          const yTransform = progress * -50; // Adjust multiplier for effect intensity
+          this.gsap.set(missionSection, {
+            y: yTransform,
+            ease: "none"
+          });
+        }
+      });
+    },
+
+    // Scroll arrow functionality
+    initScrollArrow() {
+      const scrollArrow = document.querySelector('.hero-scroll-arrow');
+      const missionSection = document.querySelector('.mission-section-parallax');
+      
+      if (!scrollArrow || !missionSection) return;
+
+      // Set initial state
+      this.gsap.set(scrollArrow, { opacity: 0, y: 20 });
+
+      scrollArrow.addEventListener('click', (e) => {
+        e.preventDefault();
+        missionSection.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      });
+    },
+
     initFullAnimations() {
       // Set initial states
       this.setInitialStates();
@@ -127,6 +167,8 @@
       this.animateFloatingElements();
       this.initHeaderScrollEffect();
       this.animatePhilosophySection();
+      this.initParallaxEffect();
+      this.initScrollArrow();
     },
 
     setInitialStates() {
@@ -151,9 +193,10 @@
 
     animateHero() {
       const heroTitle = document.querySelector('.hero-title');
-      const heroSubtitle = document.querySelector('.hero-subtitle');
+      const heroSubtitles = document.querySelectorAll('.hero-subtitle'); // Get all subtitles
       const heroDivider = document.querySelector('.hero-divider');
       const heroButtons = document.querySelectorAll('.hero-content .btn');
+      const heroArrow = document.querySelector('.hero-scroll-arrow');
 
       if (!heroTitle) return;
 
@@ -166,11 +209,12 @@
         duration: 1.5,
         ease: "back.out(1.7)"
       })
-      .to(heroSubtitle, {
+      .to(heroSubtitles, { // Animate all subtitles
         opacity: 1,
         y: 0,
         duration: 1.2,
-        ease: "power2.out"
+        ease: "power2.out",
+        stagger: 0.3 // Stagger the animation between subtitles
       }, "-=1")
       .to(heroDivider, {
         scaleX: 1,
@@ -183,7 +227,13 @@
         duration: 0.8,
         ease: "power2.out",
         stagger: 0.1
-      }, "-=0.4");
+      }, "-=0.4")
+      .to(heroArrow, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power2.out"
+      }, "-=0.2");
 
       // Floating elements
       const floatingElements = document.querySelectorAll('.hero-floating-element');
