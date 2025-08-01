@@ -2238,7 +2238,7 @@ img {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-weight: 600 !important;
-//   color: #2b1b0c;
+  //   color: #2b1b0c;
 }
 
 .box-content {
@@ -2257,4 +2257,370 @@ img {
 .text-large.centered,
 .special-text.centered {
   text-align: center;
+}
+
+// testimonials
+
+// Testimonials Section Styles
+.testimonials-section {
+  position: relative;
+  overflow: hidden;
+
+  .section-floating-element--center {
+    background: rgba($color-white, 0.15);
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .testimonials-container {
+    max-width: 64rem;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 2rem;
+  }
+
+  .testimonials-carousel {
+    position: relative;
+    min-height: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+
+    @media (max-width: $tablet) {
+      min-height: 16rem;
+    }
+  }
+
+  .testimonial-slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.6s ease;
+    transform: translateX(50px);
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+    }
+
+    // Stagger animation for smoother transitions
+    &:not(.active) {
+      transition-delay: 0.1s;
+    }
+  }
+
+  .testimonial-content {
+    text-align: center;
+    max-width: 48rem;
+    margin: 0 auto;
+    padding: 2rem;
+
+    // Subtle glass effect
+    background: rgba($color-white, 0.4);
+    backdrop-filter: blur(8px);
+    border-radius: 2rem;
+    box-shadow: 0 25px 50px -12px rgba($color-primary, 0.1);
+    border: 1px solid rgba($color-white, 0.5);
+    position: relative;
+
+    // Subtle glow effect
+    &::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      background: linear-gradient(
+        135deg,
+        rgba($color-accent, 0.3),
+        rgba($color-white, 0.2),
+        rgba($color-accent, 0.3)
+      );
+      border-radius: 2rem;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      filter: blur(1px);
+    }
+
+    @media (max-width: $tablet) {
+      padding: 1.5rem;
+    }
+
+    @media (max-width: $mobile) {
+      padding: 1.25rem;
+    }
+  }
+
+  .testimonial-slide.active .testimonial-content::before {
+    opacity: 1;
+  }
+
+  .testimonial-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.25rem, 3vw, 1.875rem);
+    line-height: 1.4;
+    font-weight: 400;
+    color: $color-primary;
+    margin: 0;
+    letter-spacing: 0.025em;
+    font-style: italic;
+    position: relative;
+
+    // Quotation marks styling
+    &::before,
+    &::after {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      color: rgba($color-primary, 0.3);
+      position: absolute;
+      font-style: normal;
+    }
+
+    &::before {
+      content: '"';
+      top: -1rem;
+      left: -1rem;
+    }
+
+    &::after {
+      content: '"';
+      bottom: -2rem;
+      right: -1rem;
+    }
+
+    @media (max-width: $tablet) {
+      &::before {
+        top: -0.5rem;
+        left: -0.5rem;
+        font-size: 2.5rem;
+      }
+
+      &::after {
+        bottom: -1.5rem;
+        right: -0.5rem;
+        font-size: 2.5rem;
+      }
+    }
+
+    @media (max-width: $mobile) {
+      &::before,
+      &::after {
+        font-size: 2rem;
+      }
+
+      &::before {
+        top: -0.25rem;
+        left: -0.25rem;
+      }
+
+      &::after {
+        bottom: -1rem;
+        right: -0.25rem;
+      }
+    }
+  }
+
+  // Navigation Arrows
+  .testimonial-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3.5rem;
+    height: 3.5rem;
+    background: rgba($color-white, 0.8);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba($color-primary, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: $color-primary;
+    z-index: 10;
+
+    &:hover {
+      background: rgba($color-white, 0.95);
+      transform: translateY(-50%) scale(1.1);
+      box-shadow: 0 10px 25px -5px rgba($color-primary, 0.2);
+    }
+
+    &:active {
+      transform: translateY(-50%) scale(0.95);
+    }
+
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    &--prev {
+      left: -1rem;
+
+      @media (max-width: $tablet) {
+        left: -0.5rem;
+      }
+
+      @media (max-width: $mobile) {
+        left: 0;
+      }
+    }
+
+    &--next {
+      right: -1rem;
+
+      @media (max-width: $tablet) {
+        right: -0.5rem;
+      }
+
+      @media (max-width: $mobile) {
+        right: 0;
+      }
+    }
+
+    // Hide on very small screens
+    @media (max-width: 480px) {
+      width: 3rem;
+      height: 3rem;
+
+      svg {
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+    }
+  }
+
+  // Dots Navigation
+  .testimonials-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+
+  .testimonial-dot {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    border: none;
+    background: rgba($color-primary, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: -0.375rem;
+      border-radius: 50%;
+      background: transparent;
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    &:hover {
+      background: rgba($color-primary, 0.5);
+      transform: scale(1.2);
+    }
+
+    &.active {
+      background: $color-primary;
+      transform: scale(1.3);
+
+      &::before {
+        border-color: rgba($color-primary, 0.3);
+      }
+    }
+
+    // Larger touch targets on mobile
+    @media (max-width: $tablet) {
+      width: 1rem;
+      height: 1rem;
+
+      &::before {
+        inset: -0.5rem;
+      }
+    }
+  }
+
+  // Enhanced mobile responsiveness
+  @media (max-width: $tablet) {
+    .testimonials-container {
+      padding: 0 1rem;
+    }
+
+    .testimonials-carousel {
+      margin-bottom: 2rem;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    padding: 4rem 0;
+
+    .testimonials-container {
+      padding: 0 0.5rem;
+    }
+
+    .section-header {
+      margin-bottom: 3rem;
+    }
+  }
+}
+
+// Smooth floating animation for background element
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translate(-50%, -50%) translateY(-10px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(0) rotate(0deg);
+  }
+  75% {
+    transform: translate(-50%, -50%) translateY(10px) rotate(-1deg);
+  }
+}
+
+// Accessibility improvements
+@media (prefers-reduced-motion: reduce) {
+  .testimonial-slide,
+  .testimonial-nav,
+  .testimonial-dot,
+  .testimonials-section .section-floating-element--center {
+    transition: none;
+    animation: none;
+  }
+}
+
+// Focus states for accessibility
+.testimonial-nav:focus-visible,
+.testimonial-dot:focus-visible {
+  outline: 2px solid $color-primary;
+  outline-offset: 2px;
+}
+
+// Print styles
+@media print {
+  .testimonials-section {
+    .testimonial-nav,
+    .testimonials-dots {
+      display: none;
+    }
+
+    .testimonial-slide {
+      position: static;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      page-break-inside: avoid;
+      margin-bottom: 2rem;
+    }
+  }
 }
