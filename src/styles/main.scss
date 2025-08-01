@@ -1111,8 +1111,7 @@ img {
     }
   }
 }
-
-// Image components
+// Enhanced Image components with podcast support
 .image-container {
   position: relative;
 
@@ -1139,6 +1138,7 @@ img {
       border-radius: 1.5rem;
       overflow: hidden;
       box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      transition: all 0.5s ease;
 
       img {
         width: 100%;
@@ -1161,6 +1161,101 @@ img {
           rgba($color-primary, 0.2)
         );
       }
+
+      // Podcast-specific styling
+      &.podcast-image-wrapper {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        transition: all 0.5s ease;
+
+        &:hover {
+          transform: scale(1.02);
+          box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.4);
+
+          // Enhance overlay on hover
+          > div:first-child {
+            background: linear-gradient(
+              180deg, 
+              rgba($color-primary, 0.4), 
+              transparent, 
+              rgba($color-primary, 0.7)
+            );
+          }
+
+          // Text glow effect on hover
+          h3, p {
+            text-shadow: 0 2px 8px rgba($color-accent, 0.3), 
+                         0 4px 16px rgba(0,0,0,0.4);
+          }
+        }
+
+        // Text styling within podcast card
+        h3 {
+          font-family: 'Cormorant Garamond', serif;
+          letter-spacing: 0.05em;
+          transition: all 0.3s ease;
+        }
+
+        p {
+          font-family: 'Cormorant Garamond', serif;
+          letter-spacing: 0.025em;
+          transition: all 0.3s ease;
+        }
+
+        // Responsive adjustments
+        @media (max-width: $tablet) {
+          width: 20rem !important;
+          height: 20rem !important;
+
+          h3 {
+            font-size: 1.25rem;
+          }
+
+          p {
+            font-size: 1rem;
+          }
+        }
+
+        @media (max-width: $mobile) {
+          width: 16rem !important;
+          height: 16rem !important;
+
+          h3 {
+            font-size: 1.125rem;
+          }
+
+          p {
+            font-size: 0.875rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Optional: Add a subtle animation for the podcast card
+@keyframes podcastPulse {
+  0%, 100% {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+  50% {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+  }
+}
+
+.podcast-image-wrapper {
+  animation: podcastPulse 4s ease-in-out infinite;
+}
+
+// Accessibility: Pause animations on reduced motion preference
+@media (prefers-reduced-motion: reduce) {
+  .podcast-image-wrapper {
+    animation: none;
+    
+    &:hover {
+      transform: none;
     }
   }
 }
@@ -1703,8 +1798,15 @@ img {
     }
   }
 }
+// Enhanced Offerings Section Styles
+.offerings-section {
+  .section-floating-element--top-left {
+    background: rgba($color-white, 0.2);
+    animation: float 8s ease-in-out infinite;
+  }
+}
 
-// Offerings page specific styles
+// Offering Header Component
 .offering-header {
   display: flex;
   align-items: center;
@@ -1716,15 +1818,19 @@ img {
     background: rgba($color-primary, 0.1);
     border-radius: 1rem;
     transition: all 0.3s ease;
+    flex-shrink: 0;
 
     .offering-icon {
       width: 2rem;
       height: 2rem;
       color: $color-primary;
+      transition: all 0.3s ease;
     }
   }
 
   .offering-info {
+    flex: 1;
+
     .offering-title {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.875rem;
@@ -1732,6 +1838,8 @@ img {
       letter-spacing: 0.05em;
       color: $color-primary;
       margin-bottom: 0.25rem;
+      line-height: 1.2;
+      transition: color 0.3s ease;
     }
 
     .offering-subtitle {
@@ -1739,10 +1847,33 @@ img {
       font-size: 1.125rem;
       font-weight: 400;
       color: rgba($color-primary, 0.7);
+      line-height: 1.3;
+      transition: color 0.3s ease;
     }
   }
 }
 
+// Enhanced Card Hover Effects for Offerings
+.card:hover {
+  .offering-header {
+    .offering-icon-bg {
+      background: rgba($color-primary, 0.2);
+      transform: scale(1.05);
+    }
+
+    .offering-info {
+      .offering-title {
+        color: darken($color-primary, 10%);
+      }
+
+      .offering-subtitle {
+        color: rgba($color-primary, 0.9);
+      }
+    }
+  }
+}
+
+// Single Session Card Enhanced Styles
 .single-session-card {
   text-align: center;
 
@@ -1755,11 +1886,41 @@ img {
       padding: 1.5rem;
       background: rgba($color-white, 0.1);
       border-radius: 1.5rem;
+      transition: all 0.3s ease;
+      position: relative;
+
+      // Subtle glow effect
+      &::before {
+        content: '';
+        position: absolute;
+        inset: -2px;
+        background: linear-gradient(
+          135deg, 
+          rgba($color-accent, 0.3), 
+          rgba($color-white, 0.1), 
+          rgba($color-accent, 0.3)
+        );
+        border-radius: 1.5rem;
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        filter: blur(4px);
+      }
+
+      &:hover {
+        background: rgba($color-white, 0.15);
+        transform: scale(1.05);
+
+        &::before {
+          opacity: 1;
+        }
+      }
 
       .session-icon {
         width: 3rem;
         height: 3rem;
         color: $color-accent;
+        transition: all 0.3s ease;
       }
     }
   }
@@ -1773,6 +1934,16 @@ img {
       font-weight: 500;
       letter-spacing: 0.05em;
       margin-bottom: 1rem;
+      color: $color-white;
+      line-height: 1.2;
+
+      @media (max-width: $tablet) {
+        font-size: 2rem;
+      }
+
+      @media (max-width: $mobile) {
+        font-size: 1.75rem;
+      }
     }
 
     .session-description {
@@ -1783,6 +1954,12 @@ img {
       max-width: 32rem;
       margin: 0 auto;
       line-height: 1.4;
+      color: rgba($color-white, 0.9);
+
+      @media (max-width: $tablet) {
+        font-size: 1.125rem;
+        max-width: 28rem;
+      }
     }
   }
 
@@ -1796,21 +1973,210 @@ img {
       grid-template-columns: repeat(3, 1fr);
     }
 
+    @media (max-width: $tablet) {
+      gap: 1.5rem;
+      padding: 1.5rem 0;
+    }
+
     .session-feature {
       text-align: center;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+
+        .feature-icon {
+          transform: scale(1.1);
+          color: lighten($color-accent, 10%);
+        }
+      }
 
       .feature-icon {
         width: 2rem;
         height: 2rem;
         color: $color-accent;
         margin: 0 auto 0.5rem;
+        transition: all 0.3s ease;
+        display: block;
       }
 
       .feature-text {
         font-family: 'Cormorant Garamond', serif;
         font-weight: 400;
+        color: rgba($color-white, 0.9);
+        font-size: 1rem;
+        margin: 0;
       }
     }
+  }
+}
+
+// Enhanced Grid Layout for Offerings
+.offerings-grid {
+  display: grid;
+  gap: 3rem;
+
+  &--four-cols {
+    @media (min-width: $desktop) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+    }
+
+    @media (min-width: $large-desktop) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4rem;
+    }
+  }
+}
+
+// Enhanced Card Dividers for Offerings
+.card .card-divider {
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.card:hover .card-divider {
+  width: 5rem;
+  background: linear-gradient(
+    90deg,
+    $color-primary,
+    lighten($color-primary, 20%)
+  );
+}
+
+// Enhanced Button Styles for Offerings
+.card .btn {
+  margin-top: auto;
+  transition: all 0.3s ease;
+
+  &--full-width {
+    width: 100%;
+  }
+}
+
+// Responsive Adjustments for Offerings
+@media (max-width: $tablet) {
+  .offering-header {
+    gap: 0.75rem;
+
+    .offering-icon-bg {
+      padding: 0.75rem;
+
+      .offering-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+
+    .offering-info {
+      .offering-title {
+        font-size: 1.5rem;
+      }
+
+      .offering-subtitle {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .single-session-card {
+    .session-icon-container {
+      margin-bottom: 1.5rem;
+
+      .session-icon-bg {
+        padding: 1.25rem;
+
+        .session-icon {
+          width: 2.5rem;
+          height: 2.5rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .offering-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+
+    .offering-info {
+      .offering-title {
+        font-size: 1.375rem;
+      }
+    }
+  }
+
+  .single-session-card {
+    .session-features {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+  }
+}
+
+// Enhanced Focus States for Accessibility
+.offering-header .offering-icon-bg:focus-visible,
+.session-icon-container .session-icon-bg:focus-visible {
+  outline: 2px solid $color-accent;
+  outline-offset: 2px;
+}
+
+// Print Styles for Offerings
+@media print {
+  .single-session-card {
+    .session-icon-container,
+    .session-features {
+      display: none;
+    }
+
+    .session-details {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .offering-header {
+    .offering-icon-bg {
+      display: none;
+    }
+  }
+}
+
+// Animation Enhancements
+@keyframes offeringFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-5px) rotate(1deg);
+  }
+  50% {
+    transform: translateY(0) rotate(0deg);
+  }
+  75% {
+    transform: translateY(5px) rotate(-1deg);
+  }
+}
+
+.offering-header:hover .offering-icon-bg {
+  animation: offeringFloat 2s ease-in-out infinite;
+}
+
+// Accessibility: Reduced motion
+@media (prefers-reduced-motion: reduce) {
+  .offering-header .offering-icon-bg,
+  .session-icon-container .session-icon-bg,
+  .session-feature,
+  .card {
+    transition: none;
+    animation: none;
+  }
+
+  .offering-header:hover .offering-icon-bg {
+    animation: none;
+    transform: none;
   }
 }
 
@@ -2623,4 +2989,8 @@ img {
       margin-bottom: 2rem;
     }
   }
+}
+
+.podcast-embed {
+    width: 100%;
 }
