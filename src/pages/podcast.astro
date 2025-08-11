@@ -29,11 +29,17 @@ import { Icon } from 'astro-icon/components';
                 variant="secondary"
                 size="large"
                 href="https://chat.whatsapp.com/DTm0JXsgkME9COv772vAaU"
+                target="_blank"
               >
                 <Icon name="mdi:whatsapp" />
-                Join WhatsApp Group
+                Join Live Class
               </Button>
-              <Button variant="outline" size="large">
+              <Button
+                href="https://podcasts.apple.com/us/podcast/parsha-with-purpose/id1799568860"
+                target="_blank"
+                variant="outline"
+                size="large"
+              >
                 <Icon name="mdi:headphones" />
                 Listen as Podcast
               </Button>
@@ -354,25 +360,21 @@ import { Icon } from 'astro-icon/components';
                 style="font-size: 2.5rem; font-weight: 400; letter-spacing: 0.05em; margin-bottom: 1.5rem; color: rgba(255, 255, 255, 0.95); line-height: 1.2;"
                 id="latest-episode-title"
               >
-                Parsha Vayeshev: The Power of Dreams
               </h3>
 
               <p
                 style="font-size: 1.25rem; opacity: 0.85; line-height: 1.4; font-weight: 300; margin-bottom: 2rem; color: rgba(255, 255, 255, 0.85);"
                 id="latest-episode-description"
               >
-                Joseph's dreams weren't just nighttime visions - they were
-                glimpses into divine purpose. This week we explore what it means
-                to trust your inner knowing, even when others can't see your
-                vision. How do we hold our dreams with humility while staying
-                true to what we know in our souls?
               </p>
 
               <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
                 <Button
+                  href="https://podcasts.apple.com/us/podcast/parsha-with-purpose/id1799568860"
                   variant="secondary"
                   size="large"
                   id="play-latest-episode"
+                  target="_blank"
                 >
                   <svg class="btn-icon" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z"></path>
@@ -476,20 +478,47 @@ import { Icon } from 'astro-icon/components';
         </div>
 
         <div
-          style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem;"
+          style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-bottom: 2rem;"
         >
           <Button
             variant="primary"
             size="large"
             href="https://chat.whatsapp.com/DTm0JXsgkME9COv772vAaU"
+            target='_blank'
           >
             <Icon name="mdi:whatsapp" />
             Join Live Class
           </Button>
-          <Button variant="secondary" size="large">
-            <Icon name="mdi:headphones" />
-            Listen as Podcast
-          </Button>
+        </div>
+
+        <div style="margin-top: 2rem;">
+          <p style="font-size: 1.125rem; opacity: 0.7; margin-bottom: 1rem;">
+            Listen here:
+          </p>
+          <div
+            style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;"
+          >
+            <Button
+              class="btn-podcast"
+              variant="outline"
+              size="medium"
+              href="https://podcasts.apple.com/us/podcast/parsha-with-purpose/id1799568860"
+              target="_blank"
+            >
+              <Icon name="mdi:apple" />
+              Apple Podcasts
+            </Button>
+            <Button
+              class="btn-podcast"
+              variant="outline"
+              size="medium"
+              href="https://open.spotify.com/show/6TNloSZWahwAKN17eKrcKW?si=b753383a964e4164"
+              target="_blank"
+            >
+              <Icon name="mdi:spotify" />
+              Spotify
+            </Button>
+          </div>
         </div>
       </div>
     </div>

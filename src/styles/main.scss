@@ -537,17 +537,10 @@ img {
     z-index: 2;
   }
 
-  // Home page specific background
-  &.home-hero {
-    &::before {
-      background-image: url('/placeholder.svg?height=1080&width=1920');
-    }
-  }
-
   // Default background for other pages
   &:not(.home-hero) {
     &::before {
-      background-image: url('/images/mountains.jpg');
+      background-image: url('/images/header.jpg');
     }
   }
 
@@ -3121,4 +3114,9 @@ img {
     background-repeat: no-repeat;
     background-size: cover;
   }
+}
+
+.btn-podcast {
+  color: #2b1b0c;
+  border-color: #2b1b0c;
 }
