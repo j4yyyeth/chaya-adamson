@@ -126,6 +126,14 @@ img {
   height: auto;
 }
 
+.site-title a,
+.site-title h1 {
+  text-transform: uppercase !important;
+  font-weight: 100 !important;
+  letter-spacing: 7px !important;
+  font-family: 'Cormorant', serif !important;
+}
+
 // Layout components
 .site-header {
   position: fixed;
@@ -147,11 +155,6 @@ img {
     background-color: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(243, 244, 246, 0.5);
-
-    .site-title a,
-    .site-title h1 {
-      font-family: 'Cormorant', serif !important;
-    }
 
     .site-title a,
     .main-navigation a {
