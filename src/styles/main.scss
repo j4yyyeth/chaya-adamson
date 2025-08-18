@@ -148,8 +148,9 @@ img {
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(243, 244, 246, 0.5);
 
-    .site-title a {
-      font-family: 'Cormorant', serif;
+    .site-title a,
+    .site-title h1 {
+      font-family: 'Cormorant', serif !important;
     }
 
     .site-title a,
@@ -183,7 +184,6 @@ img {
   }
 
   .site-title {
-    font-family: 'Montserrat', sans-serif;
     font-size: 1.875rem;
     font-weight: 600;
     letter-spacing: 0.025em;
