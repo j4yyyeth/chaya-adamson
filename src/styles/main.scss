@@ -74,7 +74,7 @@ html {
 }
 
 body {
-  font-family: $glacial;
+  font-family: 'glacial', 'serif';
   line-height: 1.6;
   color: $color-primary;
   background-color: $color-white;
@@ -110,7 +110,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Cormorant', serif;
   font-weight: 600;
   letter-spacing: 0.025em;
   line-height: 1.2;
@@ -323,7 +323,7 @@ img {
   // Brand section (left)
   .footer-brand {
     .footer-title {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'glacial', 'serif';
       font-size: 1.875rem;
       font-weight: 600;
       color: $color-primary;
@@ -391,7 +391,7 @@ img {
 
     .footer-column {
       .footer-column-title {
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'glacial', 'serif';
         font-size: 1.125rem;
         font-weight: 600;
         color: $color-primary;
@@ -600,7 +600,7 @@ img {
   }
 
   .hero-title {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Cormorant', serif;
     font-size: clamp(2.5rem, 8vw, 4.5rem);
     font-weight: 600;
     letter-spacing: 0.025em;
@@ -613,8 +613,8 @@ img {
   }
 
   .hero-subtitle {
-    font-family: 'Montserrat', sans-serif;
-    font-size: clamp(1.25rem, 4vw, 1.875rem);
+    font-family: 'glacial', 'serif';
+    font-size: 28px !important;
     font-weight: 400;
     opacity: 0.9;
     line-height: 1.4;
@@ -722,7 +722,7 @@ img {
     margin-bottom: 5rem;
 
     .section-title {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Cormorant', serif;
       font-size: clamp(2.5rem, 6vw, 3.75rem);
       font-weight: 600;
       letter-spacing: 0.025em;
@@ -862,7 +862,7 @@ img {
   }
 
   .card-description {
-    font-family: 'Cormorant Garamond', serif;
+font-family: "glacial", "serif";
     font-size: 1.125rem;
     font-weight: 400;
     line-height: 1.4;
@@ -1109,7 +1109,7 @@ img {
 
 .text-content {
   .text-large {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'glacial', 'serif';
     font-size: 1.25rem;
     line-height: 1.4;
     font-weight: 400;
@@ -1209,7 +1209,7 @@ img {
 
         // Text styling within podcast card
         h3 {
-          font-family: 'Montserrat', sans-serif;
+          font-family: 'glacial', 'serif';
           letter-spacing: 0.025em;
           transition: all 0.3s ease;
         }
@@ -1412,14 +1412,14 @@ img {
       align-items: center;
       justify-content: center;
       margin: 0 auto 1.5rem;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'glacial', 'serif';
       font-size: 1.875rem;
       font-weight: 600;
       color: $color-accent;
     }
 
     .step-title {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'glacial', 'serif';
       font-size: 1.5rem;
       font-weight: 600;
       letter-spacing: 0.025em;
@@ -1576,7 +1576,7 @@ img {
     }
 
     p {
-      font-family: $glacial;
+font-family: "glacial", "serif";
       font-size: 1.5rem;
       line-height: 1.4;
       font-weight: 400;
@@ -1772,7 +1772,7 @@ img {
     }
 
     .podcast-title {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'glacial', 'serif';
       font-size: 1.5rem;
       font-weight: 600;
       color: $color-accent;
@@ -1874,7 +1874,7 @@ img {
 
     .contact-info {
       .contact-title {
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'glacial', 'serif';
         font-size: 1.5rem;
         font-weight: 600;
         color: $color-primary;
@@ -1937,7 +1937,7 @@ img {
     flex: 1;
 
     .offering-title {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'glacial', 'serif';
       font-size: 1.875rem;
       font-weight: 600;
       letter-spacing: 0.025em;
@@ -2034,7 +2034,7 @@ img {
     margin-bottom: 2rem;
 
     .session-title {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'glacial', 'serif';
       font-size: 2.5rem;
       font-weight: 600;
       letter-spacing: 0.025em;
@@ -2579,7 +2579,7 @@ img {
 // Mission section specific styles
 .mission-section {
   .section-title {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Cormorant', serif;
     font-size: clamp(3.125rem, 8vw, 4.5rem);
     font-weight: 600;
     letter-spacing: 0.025em;
@@ -2663,7 +2663,7 @@ img {
   }
 
   .text-large {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'glacial', 'serif';
     font-size: clamp(1.75rem, 3.5vw, 2.25rem);
     font-weight: 400;
     line-height: 1.3;
@@ -2710,7 +2710,6 @@ img {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-weight: 600 !important;
-  //   color: #2b1b0c;
 }
 
 .box-content {
@@ -3140,4 +3139,16 @@ img {
 .btn-podcast {
   color: #2b1b0c;
   border-color: #2b1b0c;
+}
+
+@media (min-width: 1024px) {
+  .card-relative {
+    position: relative;
+    right: 50%;
+    margin: 0 auto;
+  }
+  .card-relative-2 {
+    position: relative;
+    left: 50%;
+  }
 }
