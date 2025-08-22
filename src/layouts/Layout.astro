@@ -19,12 +19,21 @@ const { title, description = 'Pathways to remembering who you truly are' } =
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
-    
+
     <!-- GSAP via traditional CDN with defer loading -->
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
-    
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"
+    ></script>
+
     <!-- <ClientRouter /> -->
   </head>
   <body>
@@ -33,10 +42,33 @@ const { title, description = 'Pathways to remembering who you truly are' } =
         <h1 class="site-title">
           <a href="/">Chaya Adamson</a>
         </h1>
+
+        <!-- Desktop Navigation -->
         <nav class="main-navigation">
           <a href="/offerings" class="nav-link">Offerings</a>
           <a href="/podcast" class="nav-link">Podcast</a>
           <a href="/contact" class="nav-link">Contact</a>
+        </nav>
+
+        <!-- Mobile Menu Toggle -->
+        <button
+          class="mobile-menu-toggle"
+          aria-label="Toggle mobile menu"
+          aria-expanded="false"
+        >
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu">
+        <div class="mobile-menu-backdrop"></div>
+        <nav class="mobile-navigation">
+          <a href="/offerings" class="mobile-nav-link">Offerings</a>
+          <a href="/podcast" class="mobile-nav-link">Podcast</a>
+          <a href="/contact" class="mobile-nav-link">Contact</a>
         </nav>
       </div>
     </header>
@@ -92,3 +124,89 @@ const { title, description = 'Pathways to remembering who you truly are' } =
     <script src="../scripts/main.js"></script>
   </body>
 </html>
+
+<script>
+  // Mobile menu functionality
+  document.addEventListener('DOMContentLoaded', function () {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+    const body = document.body;
+
+    // Toggle mobile menu
+    mobileMenuToggle.addEventListener('click', function () {
+      const isActive = mobileMenuToggle.classList.contains('active');
+
+      if (isActive) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
+    });
+
+    // Close menu when clicking a nav link
+    mobileNavLinks.forEach((link) => {
+      link.addEventListener('click', function () {
+        closeMobileMenu();
+      });
+    });
+
+    // Close menu when clicking backdrop
+    document
+      .querySelector('.mobile-menu-backdrop')
+      .addEventListener('click', function () {
+        closeMobileMenu();
+      });
+
+    // Close menu on escape key
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && mobileMenuToggle.classList.contains('active')) {
+        closeMobileMenu();
+      }
+    });
+
+    function openMobileMenu() {
+      mobileMenuToggle.classList.add('active');
+      mobileMenuToggle.setAttribute('aria-expanded', 'true');
+      mobileMenu.classList.add('active');
+      body.classList.add('mobile-menu-open');
+    }
+
+    function closeMobileMenu() {
+      mobileMenuToggle.classList.remove('active');
+      mobileMenuToggle.setAttribute('aria-expanded', 'false');
+      mobileMenu.classList.remove('active');
+      body.classList.remove('mobile-menu-open');
+    }
+
+    // Handle scroll state for header
+    let lastScrollY = window.scrollY;
+    const header = document.querySelector('.site-header');
+
+    function handleScroll() {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+
+      lastScrollY = currentScrollY;
+    }
+
+    // Throttled scroll listener
+    let ticking = false;
+    function requestTick() {
+      if (!ticking) {
+        requestAnimationFrame(handleScroll);
+        ticking = true;
+      }
+    }
+
+    window.addEventListener('scroll', function () {
+      ticking = false;
+      requestTick();
+    });
+  });
+</script>
